@@ -1,0 +1,46 @@
+给你一个下标从 0 开始长度为 n 的整数数组 nums ，和一个下标从 0 开始长度为 m 的整数数组 pattern ，pattern 数组只包含整数 -1 ，0 和 1 。
+
+大小为 m + 1 的子数组 nums[i..j] 如果对于每个元素 pattern[k] 都满足以下条件，那么我们说这个子数组匹配模式数组 pattern ：
+
+如果 pattern[k] == 1 ，那么 nums[i + k + 1] > nums[i + k]
+如果 pattern[k] == 0 ，那么 nums[i + k + 1] == nums[i + k]
+如果 pattern[k] == -1 ，那么 nums[i + k + 1] < nums[i + k]
+请你返回匹配 pattern 的 nums 子数组的 数目 。
+
+class Solution {
+public:
+    int countMatchingSubarrays(vector<int> &nums, vector<int> &pattern) {
+        int m = pattern.size();
+        vector<int> pi(m);
+        int cnt = 0;
+        for (int i = 1; i < m; i++) {
+            int v = pattern[i];
+            while (cnt && pattern[cnt] != v) {
+                cnt = pi[cnt - 1];
+            }
+            if (pattern[cnt] == v) {
+                cnt++;
+            }
+            pi[i] = cnt;
+        }
+
+        int ans = 0;
+        cnt = 0;
+        for (int i = 1; i < nums.size(); i++) {
+            int x = nums[i - 1], y = nums[i];
+            int v = (y > x) - (y < x);
+            while (cnt && pattern[cnt] != v) {
+                cnt = pi[cnt - 1];
+            }
+            if (pattern[cnt] == v) {
+                cnt++;
+            }
+            if (cnt == m) {
+                ans++;
+                cnt = pi[cnt - 1];
+            }
+        }
+        return ans;
+    }
+};
+
