@@ -1,0 +1,23 @@
+给你一个由 不同 整数组成的数组 nums ，和一个目标整数 target 。请你从 nums 中找出并返回总和为 target 的元素排列的个数。
+
+题目数据保证答案符合 32 位整数范围。
+
+
+
+class Solution {
+public:
+    int combinationSum4(vector<int>& nums, int target) {
+        // 使用 unsigned 可以让溢出不报错
+        // 对于溢出的数据，不会影响答案的正确性（题目保证）
+        vector<unsigned> f(target + 1);
+        f[0] = 1;
+        for (int i = 1; i <= target; i++) {
+            for (int x : nums) {
+                if (x <= i) {
+                    f[i] += f[i - x];
+                }
+            }
+        }
+        return f[target];
+    }
+};
