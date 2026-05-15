@@ -1,2 +1,1 @@
-# CS-Learning-Path
-Starting from today, I will document my experience of solving programming problems.
+﻿# CS-Learning-PathStarting from today, I will document my experience of solving programming problems."On May 15, 2026, I temporarily decided to also add my Linux learning journey."
