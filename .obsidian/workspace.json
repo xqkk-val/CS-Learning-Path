@@ -1,0 +1,222 @@
+{
+  "main": {
+    "id": "f706682038bcae4c",
+    "type": "split",
+    "children": [
+      {
+        "id": "54461720f1a987bd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "694f3dafcb2882c9",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "文件IO学习进度.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "list",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "文件IO学习进度"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1f82cd73cfe56111",
+    "type": "split",
+    "children": [
+      {
+        "id": "2cab1bc548166b08",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "075776e187017b5b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "c2e5a84b2c96e5fc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "696ee7df5fc44161",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4b401c476fca1758",
+    "type": "split",
+    "children": [
+      {
+        "id": "4c0c2bcbe06b83bf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1adae1396c33ec7c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "文件IO学习进度.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "文件IO学习进度 的反向链接列表"
+            }
+          },
+          {
+            "id": "326843bc416b3caf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "文件IO学习进度.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "文件IO学习进度 的出链列表"
+            }
+          },
+          {
+            "id": "1f4b9cf9b85cae3d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "687d1bf146a604d6",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "802efa7cbf93e918",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "文件IO学习进度.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "文件IO学习进度 的大纲"
+            }
+          },
+          {
+            "id": "3c40cec00ddd86db",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "obsidian-kanban:Create new board": false
+    }
+  },
+  "active": "694f3dafcb2882c9",
+  "lastOpenFiles": [
+    "文件IO学习进度.md",
+    "progress.md",
+    "goals/goals-文件IO.md",
+    "模板/周记模板.md",
+    "模板/日记模板.md",
+    "RADEME.md",
+    "创建链接.md",
+    "scripts",
+    "notes/cpp",
+    "notes",
+    "goals",
+    "周记",
+    "模板",
+    "模板",
+    "日记",
+    "欢迎.md"
+  ]
+}
