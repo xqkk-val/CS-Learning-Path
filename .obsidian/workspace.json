@@ -11,20 +11,14 @@
             "id": "694f3dafcb2882c9",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "文件IO学习进度.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "list",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "notes/linux/linux.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "文件IO学习进度"
+              "icon": "lucide-file",
+              "title": "linux"
             }
           }
         ]
@@ -172,7 +166,7 @@
             }
           },
           {
-            "id": "3c40cec00ddd86db",
+            "id": "2ee0b6c0e235284c",
             "type": "leaf",
             "state": {
               "type": "calendar",
@@ -190,6 +184,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -202,11 +197,41 @@
   },
   "active": "694f3dafcb2882c9",
   "lastOpenFiles": [
-    "文件IO学习进度.md",
-    "progress.md",
+    "notes/cpp/c++学习进度.md",
+    "notes/cpp/c++进阶.md",
+    "notes/cpp/c++进阶.assets/image-20260528212409609.png",
+    "notes/cpp/c++进阶.assets/image-20260521222109697.png",
+    "notes/cpp/c++进阶.assets/image-20260521221938976.png",
+    "notes/cpp/c++进阶.assets/image-20260521221911097.png",
+    "notes/cpp/c++进阶.assets/image-20260521221739567.png",
+    "notes/cpp/c++进阶.assets/image-20260521221725931.png",
+    "notes/cpp/c++进阶.assets/image-20260520202544089.png",
+    "notes/cpp/c++进阶.assets/image-20260520200609731.png",
+    "notes/cpp/c++进阶.assets/image-20260520200545660.png",
+    "notes/cpp/c++进阶.assets",
+    "notes/linux/linux-ip.md",
+    "notes/linux/linux.md",
+    "notes/cpp/cpp.md",
     "goals/goals-文件IO.md",
-    "模板/周记模板.md",
+    "日记/2026-05-29.md",
+    "文件IO学习进度.md",
+    "notes/linux/Untitled.md",
+    "notes/linux/linux.assets/image-20260517145738845.png",
+    "notes/linux/linux.assets",
+    "notes/linux/linux基本操作.md",
+    "linux.assets/image-20260517154616792.png.md",
+    "linux.assets",
+    "progress.md",
+    "模板/笔记模板.md",
+    "notes/linux",
+    "notes/cpp/文件io.md",
     "模板/日记模板.md",
+    "模板/周记模板.md",
+    "README.md",
+    "未命名.md",
+    "2.01 标准IO vs 文件IO、FILE指针.md",
+    "2.md",
+    "notes/cpp/file-io",
     "RADEME.md",
     "创建链接.md",
     "scripts",
@@ -214,9 +239,6 @@
     "notes",
     "goals",
     "周记",
-    "模板",
-    "模板",
-    "日记",
     "欢迎.md"
   ]
 }
