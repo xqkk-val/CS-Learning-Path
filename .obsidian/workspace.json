@@ -174,9 +174,19 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "da36b4f51f6fdbf0",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -196,7 +206,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "694f3dafcb2882c9",
+  "active": "075776e187017b5b",
   "lastOpenFiles": [
     "system/assets",
     "system/新建文件夹",
