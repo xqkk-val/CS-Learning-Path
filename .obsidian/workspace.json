@@ -11,14 +11,20 @@
             "id": "694f3dafcb2882c9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "notes/linux/linux.md",
-                "mode": "source",
-                "source": false
+                "file": "system/文件IO学习进度.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "list",
+                  "list-collapse": [
+                    false,
+                    false,
+                    true
+                  ]
+                }
               },
-              "icon": "lucide-file",
-              "title": "linux"
+              "icon": "lucide-trello",
+              "title": "文件IO学习进度"
             }
           }
         ]
@@ -197,6 +203,10 @@
   },
   "active": "694f3dafcb2882c9",
   "lastOpenFiles": [
+    "notes/linux/linux.md",
+    "notes/linux/linux-ip.md",
+    "linux.assets/image-20260517154616792.png.md",
+    "system",
     "notes/cpp/c++学习进度.md",
     "notes/cpp/c++进阶.md",
     "notes/cpp/c++进阶.assets/image-20260528212409609.png",
@@ -209,24 +219,21 @@
     "notes/cpp/c++进阶.assets/image-20260520200609731.png",
     "notes/cpp/c++进阶.assets/image-20260520200545660.png",
     "notes/cpp/c++进阶.assets",
-    "notes/linux/linux-ip.md",
-    "notes/linux/linux.md",
     "notes/cpp/cpp.md",
-    "goals/goals-文件IO.md",
-    "日记/2026-05-29.md",
-    "文件IO学习进度.md",
+    "system/goals/goals-文件IO.md",
+    "system/日记/2026-05-29.md",
+    "system/文件IO学习进度.md",
     "notes/linux/Untitled.md",
     "notes/linux/linux.assets/image-20260517145738845.png",
     "notes/linux/linux.assets",
     "notes/linux/linux基本操作.md",
-    "linux.assets/image-20260517154616792.png.md",
     "linux.assets",
-    "progress.md",
-    "模板/笔记模板.md",
+    "system/progress.md",
+    "system/模板/笔记模板.md",
     "notes/linux",
     "notes/cpp/文件io.md",
-    "模板/日记模板.md",
-    "模板/周记模板.md",
+    "system/模板/日记模板.md",
+    "system/模板/周记模板.md",
     "README.md",
     "未命名.md",
     "2.01 标准IO vs 文件IO、FILE指针.md",
@@ -234,11 +241,10 @@
     "notes/cpp/file-io",
     "RADEME.md",
     "创建链接.md",
-    "scripts",
+    "system/scripts",
     "notes/cpp",
     "notes",
-    "goals",
-    "周记",
+    "system/goals",
     "欢迎.md"
   ]
 }
