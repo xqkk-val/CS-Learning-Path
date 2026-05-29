@@ -1030,12 +1030,12 @@ firefox-68.10.0-1.el7.centos.x86_64
 
 > firefox-68.10.0-1.el7.centos.x86_64
 >
-> - firefox     #rpm包的名称
+> - firefox     rpm包的名称
 >
-> - 60.8.0-1.el7     #rpm包的版本号
-> - centos     #rpm包适配的linux操作系统
+> - 60.8.0-1.el7     rpm包的版本号
+> - centos     rpm包适配的linux操作系统
 >
-> - x86_64     #适配64位的linux操作系统    (i686 i386结尾的就是linux32位的操作系统 noarch表示通用)
+> - x86_64     适配64位的linux操作系统    (i686 i386结尾的就是linux32位的操作系统 noarch表示通用)
 
 - 查看软件包是否安装
 
@@ -1060,7 +1060,7 @@ rpm -qf /etc/firefox/pref 查看指定文件所属的rpm包
 
 rpm -e firefox 删除rpm包文件
 
-rpm -e --nodeps firefox 强制删除rpm包 #（ --nodeps）不考虑依赖
+rpm -e --nodeps firefox 强制删除rpm包 （ --nodeps）不考虑依赖
 
 - 安装rpm包
 

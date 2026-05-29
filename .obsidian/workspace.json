@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "文件IO学习进度.md",
+                "file": "notes/linux/linux.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "文件IO学习进度 的大纲"
+              "title": "linux 的大纲"
             }
           },
           {
@@ -175,12 +175,12 @@
               "title": "Calendar"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -192,13 +192,30 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "obsidian-kanban:Create new board": false
+      "obsidian-kanban:Create new board": false,
+      "omnisearch:Omnisearch": false
     }
   },
   "active": "694f3dafcb2882c9",
   "lastOpenFiles": [
-    "notes/cpp/c++学习进度.md",
+    "system/assets",
+    "system/新建文件夹",
+    "notes/cpp/未命名.base",
+    "notes/linux/linux.md",
+    "notes/linux/未命名.base",
+    "notes/linux/未命名 1.base",
     "notes/cpp/c++进阶.md",
+    "system/模板/日记模板.md",
+    "notes/cpp/Untitled Kanban.md",
+    "notes/cpp/c++学习进度.md",
+    "notes/cpp/cpp.md",
+    "system/日记/2026-05-29.md",
+    "system/模板/周记模板.md",
+    "system/模板/笔记模板.md",
+    "system/文件IO学习进度.md",
+    "notes/linux/linux-ip.md",
+    "linux.assets/image-20260517154616792.png.md",
+    "system",
     "notes/cpp/c++进阶.assets/image-20260528212409609.png",
     "notes/cpp/c++进阶.assets/image-20260521222109697.png",
     "notes/cpp/c++进阶.assets/image-20260521221938976.png",
@@ -209,24 +226,15 @@
     "notes/cpp/c++进阶.assets/image-20260520200609731.png",
     "notes/cpp/c++进阶.assets/image-20260520200545660.png",
     "notes/cpp/c++进阶.assets",
-    "notes/linux/linux-ip.md",
-    "notes/linux/linux.md",
-    "notes/cpp/cpp.md",
-    "goals/goals-文件IO.md",
-    "日记/2026-05-29.md",
-    "文件IO学习进度.md",
+    "system/goals/goals-文件IO.md",
     "notes/linux/Untitled.md",
     "notes/linux/linux.assets/image-20260517145738845.png",
     "notes/linux/linux.assets",
     "notes/linux/linux基本操作.md",
-    "linux.assets/image-20260517154616792.png.md",
     "linux.assets",
-    "progress.md",
-    "模板/笔记模板.md",
+    "system/progress.md",
     "notes/linux",
     "notes/cpp/文件io.md",
-    "模板/日记模板.md",
-    "模板/周记模板.md",
     "README.md",
     "未命名.md",
     "2.01 标准IO vs 文件IO、FILE指针.md",
@@ -234,11 +242,6 @@
     "notes/cpp/file-io",
     "RADEME.md",
     "创建链接.md",
-    "scripts",
-    "notes/cpp",
-    "notes",
-    "goals",
-    "周记",
     "欢迎.md"
   ]
 }
