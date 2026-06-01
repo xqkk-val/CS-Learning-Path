@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/linux/linux.md",
+                "file": "notes/cpp/c++进阶.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "linux"
+              "title": "c++进阶"
             }
           }
         ]
@@ -208,8 +208,8 @@
   },
   "active": "694f3dafcb2882c9",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "notes/linux/linux.md",
+    "conflict-files-obsidian-git.md",
     "system/assets",
     "system/新建文件夹",
     "notes/cpp/未命名.base",
