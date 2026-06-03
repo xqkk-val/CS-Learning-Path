@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/cpp/c++进阶.md",
-                "mode": "preview",
+                "file": "notes/cpp/c++网络基础.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "c++进阶"
+              "title": "c++网络基础"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/linux/linux.md",
+                "file": "notes/cpp/c++网络基础.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "linux 的大纲"
+              "title": "c++网络基础 的大纲"
             }
           },
           {
@@ -186,7 +186,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -208,8 +208,15 @@
   },
   "active": "c5299b51fd101d74",
   "lastOpenFiles": [
-    "notes/cpp/cpp.md",
+    "notes/cpp/c++网络基础.assets/image-20260603203739658.png",
+    "notes/cpp/c++网络基础.assets/image-20260603203714043.png",
+    "notes/cpp/c++网络基础.assets/image-20260603203551407.png",
+    "notes/cpp/c++网络基础.assets/image-20260603203508069.png",
+    "notes/cpp/c++网络基础.assets/image-20260603203237864.png",
+    "notes/cpp/c++网络基础.assets",
     "notes/cpp/c++进阶.md",
+    "notes/cpp/c++网络基础.md",
+    "notes/cpp/cpp.md",
     "notes/linux/linux.md",
     "README.md",
     "conflict-files-obsidian-git.md",
@@ -234,24 +241,18 @@
     "notes/cpp/c++进阶.assets/image-20260521221911097.png",
     "notes/cpp/c++进阶.assets/image-20260521221739567.png",
     "notes/cpp/c++进阶.assets/image-20260521221725931.png",
-    "notes/cpp/c++进阶.assets/image-20260520202544089.png",
-    "notes/cpp/c++进阶.assets/image-20260520200609731.png",
-    "notes/cpp/c++进阶.assets/image-20260520200545660.png",
     "notes/cpp/c++进阶.assets",
     "system/goals/goals-文件IO.md",
     "notes/linux/Untitled.md",
-    "notes/linux/linux.assets/image-20260517145738845.png",
     "notes/linux/linux.assets",
     "notes/linux/linux基本操作.md",
     "linux.assets",
     "system/progress.md",
-    "notes/linux",
     "notes/cpp/文件io.md",
     "未命名.md",
     "2.01 标准IO vs 文件IO、FILE指针.md",
     "2.md",
     "RADEME.md",
-    "创建链接.md",
-    "欢迎.md"
+    "创建链接.md"
   ]
 }
