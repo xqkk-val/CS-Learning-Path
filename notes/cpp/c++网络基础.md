@@ -233,6 +233,8 @@ RARP(Reverse Address Resolution Protocol)	逆向地址解析协议
 
 2>	验证当前主机是大端存储还是小端存储
 
+使用指针验证
+
 ```cpp
 #include <myhead.h>
 
@@ -242,11 +244,28 @@ int main(int argc,const char *argv[])
     int num = 0x12345678
     
     //定义一个
-    char *ptr = (char *)&num;		//如果是整数类型，那么会读取四个字节，用一个字符类型指针指向其初始地址，那读取内容的时候，就只取一字节的内容
+    char *ptr = (char *)&num;		
+    //如果是整数类型，那么会读取四个字节，用一个字符类型指针指向其初始地址，那读取内容的时候，就只取一字节的内容
+    //如果ptr中的内容是ox12则是大端存储
+	//如果是0x78则是小端存储
+	if(*ptr == 0x12)
+	{
+		cout<< "big endian"<<endl;
+    }else if(*ptr == 0x78)
+    {
+		cout <"little endian"<<endl;
+    }
+	return 0；
 }
 ```
 
+使用共用体
 
+```cpp
+#include <myhead.h>
+
+//定义一个上共用体，多个成员共享同一个内存空间，gong享的是所占内存最大的成员空间
+```
 
 
 
