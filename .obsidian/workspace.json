@@ -221,8 +221,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "61d7e4a8678b3d7c",
+  "active": "da36b4f51f6fdbf0",
   "lastOpenFiles": [
+    "notes/cpp/c++网络基础.assets/image-20260603234036516.png",
+    "notes/cpp/c++网络基础.assets/image-20260603232747718.png",
     "system/文件IO学习进度.md",
     "system/progress.md",
     "system/goals/goals-文件IO.md",
@@ -242,7 +244,6 @@
     "未命名",
     "notes/cpp/c++网络基础.assets/image-20260603205908809.png",
     "notes/cpp/c++网络基础.assets/image-20260603205516223.png",
-    "notes/cpp/c++网络基础.assets/image-20260603204747328.png",
     "notes/cpp/c++网络基础.assets",
     "notes/cpp/c++进阶.md",
     "notes/cpp/cpp.md",
@@ -267,7 +268,6 @@
     "notes/cpp/文件io.md",
     "未命名.md",
     "2.01 标准IO vs 文件IO、FILE指针.md",
-    "2.md",
-    "RADEME.md"
+    "2.md"
   ]
 }
