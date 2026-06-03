@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/cpp/c++网络基础.md",
+                "file": "system/日记/2026-06-03.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "c++网络基础"
+              "title": "2026-06-03"
+            }
+          },
+          {
+            "id": "61d7e4a8678b3d7c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "system/goals/goals-文件IO.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "goals-文件IO"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -113,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/cpp/c++网络基础.md",
+                "file": "system/goals/goals-文件IO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "c++网络基础 的出链列表"
+              "title": "goals-文件IO 的出链列表"
             }
           },
           {
@@ -156,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/cpp/c++网络基础.md",
+                "file": "system/goals/goals-文件IO.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "c++网络基础 的大纲"
+              "title": "goals-文件IO 的大纲"
             }
           },
           {
@@ -206,22 +221,30 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "da36b4f51f6fdbf0",
+  "active": "61d7e4a8678b3d7c",
   "lastOpenFiles": [
+    "system/文件IO学习进度.md",
+    "system/progress.md",
+    "system/goals/goals-文件IO.md",
+    "system/日记/2026-06-03.md",
+    "notes/cpp/c++网络基础.md",
+    "system/模板/周记模板.md",
+    "system/模板/日记模板.md",
+    "notes/mysql/mysql基本语法.md",
+    "notes/cpp/c++进阶.assets/image-20260521221911097.png",
+    "notes/cpp/c++进阶.assets/image-20260521221725931.png",
+    "notes/cpp/c++进阶.assets/image-20260520200609731.png",
+    "notes/cpp/c++进阶.assets/image-20260520202544089.png",
+    "notes/cpp/c++进阶.assets/image-20260521221739567.png",
+    "notes/cpp/c++进阶.assets/image-20260521222109697.png",
+    "notes/cpp/c++进阶.assets/image-20260528212409609.png",
+    "notes/mysql",
+    "未命名",
     "notes/cpp/c++网络基础.assets/image-20260603205908809.png",
     "notes/cpp/c++网络基础.assets/image-20260603205516223.png",
     "notes/cpp/c++网络基础.assets/image-20260603204747328.png",
-    "notes/cpp/c++网络基础.assets/image-20260603204634993.png",
-    "notes/cpp/c++网络基础.assets/image-20260603204503573.png",
-    "notes/cpp/c++网络基础.assets/image-20260603204420773.png",
-    "notes/cpp/c++网络基础.assets/image-20260603204300176.png",
-    "notes/cpp/c++网络基础.assets/image-20260603203739658.png",
-    "notes/cpp/c++网络基础.assets/image-20260603203714043.png",
-    "notes/cpp/c++网络基础.assets/image-20260603203551407.png",
-    "notes/cpp/c++网络基础.assets/image-20260603203508069.png",
     "notes/cpp/c++网络基础.assets",
     "notes/cpp/c++进阶.md",
-    "notes/cpp/c++网络基础.md",
     "notes/cpp/cpp.md",
     "notes/linux/linux.md",
     "README.md",
@@ -231,28 +254,20 @@
     "notes/cpp/未命名.base",
     "notes/linux/未命名.base",
     "notes/linux/未命名 1.base",
-    "system/模板/日记模板.md",
     "notes/cpp/Untitled Kanban.md",
     "notes/cpp/c++学习进度.md",
     "system/日记/2026-05-29.md",
-    "system/模板/周记模板.md",
     "system/模板/笔记模板.md",
-    "system/文件IO学习进度.md",
     "notes/linux/linux-ip.md",
     "linux.assets/image-20260517154616792.png.md",
     "system",
     "notes/cpp/c++进阶.assets",
-    "system/goals/goals-文件IO.md",
     "notes/linux/Untitled.md",
-    "notes/linux/linux.assets",
     "notes/linux/linux基本操作.md",
-    "linux.assets",
-    "system/progress.md",
     "notes/cpp/文件io.md",
     "未命名.md",
     "2.01 标准IO vs 文件IO、FILE指针.md",
     "2.md",
-    "RADEME.md",
-    "创建链接.md"
+    "RADEME.md"
   ]
 }

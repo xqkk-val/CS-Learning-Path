@@ -7,8 +7,8 @@
 
 ## 📋 待学习
 
-- [ ] 2.01 标准IO与文件IO的区别、实现原理、FILE指针
-- [ ] 2.02 fputc/fgetc、fputs/fgets 基础用法
+- [x] 2.01 标准IO与文件IO的区别、实现原理、FILE指针
+- [x] 2.02 fputc/fgetc、fputs/fgets 基础用法
 - [ ] 2.03 fputs/fgets 练习、标准IO缓冲区机制
 - [ ] 2.04 fprintf/fscanf、sprintf/snprintf
 - [ ] 2.05 fprintf 练习、fread/fwrite 二进制读写

@@ -6,7 +6,6 @@ kanban-plugin: list
 
 ## - 📋 待学习
 
-- [ ] 2.03 缓冲区机制
 - [ ] 2.04 fprintf/fscanf、sprintf/snprintf
 - [ ] 2.05 fread/fwrite 二进制读写
 - [ ] 2.06 模块化读写、文件光标
@@ -18,12 +17,13 @@ kanban-plugin: list
 
 ## - 🔄 进行中
 
-- [ ] 2.01 标准IO vs 文件IO、FILE指针
-- [ ] 2.02 fputc/fgetc、fputs/fgets ^s9h31d
+- [ ] 2.03 缓冲区机制
 
 
 ## - ✅ 已完成
 
+- [ ] 2.01 标准IO vs 文件IO、FILE指针
+- [ ] 2.02 fputc/fgetc、fputs/fgets ^s9h31d
 
 
 
