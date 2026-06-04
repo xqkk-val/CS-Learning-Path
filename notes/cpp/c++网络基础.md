@@ -637,8 +637,11 @@ SOCK_DGRAM
 
 man 2 bind
 
-     #include <sys/socket.h>
-     int bind(int sockfd, const struct sockaddr *addr,socklen_t addrlen);
+```cpp 
+ #include <sys/socket.h>
+ int bind(int sockfd, const struct sockaddr *addr,socklen_t addrlen);
+ //
+```
 
 
 
