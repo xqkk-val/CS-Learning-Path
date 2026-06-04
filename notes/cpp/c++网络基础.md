@@ -640,7 +640,7 @@ man 2 bind
 ```cpp 
  #include <sys/socket.h>
  int bind(int sockfd, const struct sockaddr *addr,socklen_t addrlen);
- //
+ //功能:wei'tao
 ```
 
 
