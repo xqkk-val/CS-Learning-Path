@@ -202,11 +202,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 317.5
+    "width": 399.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,8 +222,9 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "c2e5a84b2c96e5fc",
+  "active": "da36b4f51f6fdbf0",
   "lastOpenFiles": [
+    "notes/cpp/c++网络基础.assets/image-20260604213656728.png",
     "notes/linux/linux.md",
     "system/日记/2026-06-04.md",
     "notes/cpp/c++网络基础.assets/image-20260604204014082.png",

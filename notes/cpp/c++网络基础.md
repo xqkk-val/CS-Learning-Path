@@ -629,6 +629,21 @@ SOCK_DGRAM
 
 1>通信原理
 
+![image-20260604213656728](c++网络基础.assets/image-20260604213656728.png)
+
+2>bind函数
+
+#bind
+
+man 2 bind
+
+     #include <sys/socket.h>
+     int bind(int sockfd, const struct sockaddr *addr,socklen_t addrlen);
+
+
+
+
+
 ### 5.2 TCP,UDP通信模型
 
 #### 1>	TCP通信模型讲解
