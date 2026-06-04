@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#socket ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +89,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -221,8 +222,13 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "61d7e4a8678b3d7c",
+  "active": "c2e5a84b2c96e5fc",
   "lastOpenFiles": [
+    "notes/linux/linux.md",
+    "system/日记/2026-06-04.md",
+    "notes/cpp/c++网络基础.assets/image-20260604204014082.png",
+    "notes/cpp/c++网络基础.assets/image-20260604203910179.png",
+    "notes/cpp/c++网络基础.md",
     "notes/cpp/c++网络基础.assets/image-20260604202259900.png",
     "system/goals/goals-文件IO.md",
     "notes/cpp/c++网络基础.assets/image-20260603234036516.png",
@@ -230,7 +236,6 @@
     "system/文件IO学习进度.md",
     "system/progress.md",
     "system/日记/2026-06-03.md",
-    "notes/cpp/c++网络基础.md",
     "system/模板/周记模板.md",
     "system/模板/日记模板.md",
     "notes/mysql/mysql基本语法.md",
@@ -239,15 +244,11 @@
     "notes/cpp/c++进阶.assets/image-20260520200609731.png",
     "notes/cpp/c++进阶.assets/image-20260520202544089.png",
     "notes/cpp/c++进阶.assets/image-20260521221739567.png",
-    "notes/cpp/c++进阶.assets/image-20260521222109697.png",
-    "notes/cpp/c++进阶.assets/image-20260528212409609.png",
     "notes/mysql",
     "未命名",
-    "notes/cpp/c++网络基础.assets/image-20260603205908809.png",
     "notes/cpp/c++网络基础.assets",
     "notes/cpp/c++进阶.md",
     "notes/cpp/cpp.md",
-    "notes/linux/linux.md",
     "README.md",
     "conflict-files-obsidian-git.md",
     "system/assets",
@@ -267,7 +268,6 @@
     "notes/linux/linux基本操作.md",
     "notes/cpp/文件io.md",
     "未命名.md",
-    "2.01 标准IO vs 文件IO、FILE指针.md",
-    "2.md"
+    "2.01 标准IO vs 文件IO、FILE指针.md"
   ]
 }
