@@ -640,7 +640,27 @@ man 2 bind
 ```cpp 
  #include <sys/socket.h>
  int bind(int sockfd, const struct sockaddr *addr,socklen_t addrlen);
- //功能:wei'tao
+功能:为套接字分配名称，给套接字绑定ip地址和端口号
+参数1：要被绑定的套接字文件描述符
+参数2：通用地址信息结构体，对于不同的通信域面言，使用的实际结构体是不同的,该结构体的目的是为了强制类型转换，防止警告
+    通信域为：AF_INET而言
+    struct sockaddr_in
+sa_family_t sin_family;	/*地址族：AF_INET */
+in_port_t sin_port;/端口号的网络字节序*/
+struct in_addr sin_addr；/*网络地址 */
+}:
+
+/* Internet address.*/
+struct in_addr {
+uint32_t s_addr; /*ip地址的网络字节序*/
+};
+通信域为：AF_UNIX面言，本地通信
+struct sockaddr_un {
+sa_family_t sun_family; /*通信域：AF_UNIX*/
+char	    sun_path[UNIX_PATH_MAX]; /*通信使用的文件*/
+};
+参数3：参数2的大小
+返回值：成功返回O，失败返回-1并置位错误码
 ```
 
 
