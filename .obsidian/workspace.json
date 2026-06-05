@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#socket ",
+                "query": "tag:#socklen_t  ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,8 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "4b401c476fca1758",
@@ -223,7 +222,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "da36b4f51f6fdbf0",
+  "active": "c2e5a84b2c96e5fc",
   "lastOpenFiles": [
     "notes/cpp/c++网络基础.assets/image-20260604213656728.png",
     "notes/linux/linux.md",
