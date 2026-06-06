@@ -89,8 +89,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -202,11 +201,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 286.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,29 +221,31 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "c2e5a84b2c96e5fc",
+  "active": "61d7e4a8678b3d7c",
   "lastOpenFiles": [
+    "system/日记/2026-06-03.md",
+    "notes/cpp/c++网络基础.md",
+    "system/日记/2026-06-06.md",
+    "system/日记/2026-06-04.md",
+    "system/日记/2026-05-29.md",
+    "system/模板/日记模板.md",
+    "system/模板/笔记模板.md",
     "notes/cpp/c++网络基础.assets/image-20260604213656728.png",
     "notes/linux/linux.md",
-    "system/日记/2026-06-04.md",
     "notes/cpp/c++网络基础.assets/image-20260604204014082.png",
     "notes/cpp/c++网络基础.assets/image-20260604203910179.png",
-    "notes/cpp/c++网络基础.md",
     "notes/cpp/c++网络基础.assets/image-20260604202259900.png",
     "system/goals/goals-文件IO.md",
     "notes/cpp/c++网络基础.assets/image-20260603234036516.png",
     "notes/cpp/c++网络基础.assets/image-20260603232747718.png",
     "system/文件IO学习进度.md",
     "system/progress.md",
-    "system/日记/2026-06-03.md",
     "system/模板/周记模板.md",
-    "system/模板/日记模板.md",
     "notes/mysql/mysql基本语法.md",
     "notes/cpp/c++进阶.assets/image-20260521221911097.png",
     "notes/cpp/c++进阶.assets/image-20260521221725931.png",
     "notes/cpp/c++进阶.assets/image-20260520200609731.png",
     "notes/cpp/c++进阶.assets/image-20260520202544089.png",
-    "notes/cpp/c++进阶.assets/image-20260521221739567.png",
     "notes/mysql",
     "未命名",
     "notes/cpp/c++网络基础.assets",
@@ -259,8 +260,6 @@
     "notes/linux/未命名 1.base",
     "notes/cpp/Untitled Kanban.md",
     "notes/cpp/c++学习进度.md",
-    "system/日记/2026-05-29.md",
-    "system/模板/笔记模板.md",
     "notes/linux/linux-ip.md",
     "linux.assets/image-20260517154616792.png.md",
     "system",
