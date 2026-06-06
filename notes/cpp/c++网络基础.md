@@ -207,15 +207,19 @@ g++ -fPIC -shared ***.cpp -o lib***.so
 g++ main.cpp -L 库的路径 -l库名 -I库的名字
 ```
 
+![image-20260606141927367](c++网络基础.assets/image-20260606141927367.png)
 
 
 
+4.4 以上错误的解决方式
 
+方式1：更改路径的宏
 
+```
+export LD_LIBRARY_PATH=库的路径
+```
 
-
-
-
+方法2：将自己的动态库放入到系统的库由数目录中(/lib64/usr/lib64）
 
 
 
