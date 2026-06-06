@@ -165,7 +165,6 @@ int add(int m,int n);		//函数声明
 add.cpp
 
 ```c
-#include "add.h"
 int add(int m, int n)
 {
 	return m+n;
@@ -194,14 +193,19 @@ int main(int argc ,const char *atgv[])
 
 ```
 g++ -fPIC -c ***.cpp -o ***.o		//编译生成二进制文件
-g++
+g++ -shared ***.o -o lib***.so		//依赖于二进制文件生成一个动态库
+
+上述两个指令可以合成—个指令
+g++ -fPIC -shared ***.cpp -o lib***.so
 ```
 
 
 
+4.3使用动态库
 
-
-
+```
+g++ main.cpp -L 库的路径 -l库名 -I库的名字
+```
 
 
 
