@@ -2,7 +2,9 @@
 
 ## 一>  linux入门
 
-### 1> C++环境的搭建
+### 1.1>C++环境的搭建
+
+#### 1>环境搭建
 
 #linux #环境 #gcc
 1、安装g++编译环境、gcc编译环境
@@ -18,11 +20,19 @@ sudo yum install gcc-c++
 
 ![image-20260520202544089](c++进阶.assets/image-20260520202544089.png)
 
-man手册
 
-### 1.2sys库
+
+### 1.2>sys库的使用
+
+#### 1>man手册的解析以及使用方法
+
+#man手册
+
+#### 2>常用的内核提供的函数库 sys
 
 #### 3>使用GDB程序
+
+#GDB
 
 break(b)
 
@@ -223,53 +233,255 @@ export LD_LIBRARY_PATH=库的路径
 
 
 
+#### 5>如何使用第三方库
+
+1.c/c++语言默认是支持标准输入输出库的,但是其他的相关函数库需要第三方引入,并且,编译程序时,需要链接上对应的库
+
+2.使用数学库:
+
+```
+ #include<math.h>
+```
+
+![image-20260608223901539](c++网络基础.assets/image-20260608223901539.png)
+
+3.使用线程支持类库:包含include<pthread.h>
+
+![image-20260608225032949](c++网络基础.assets/image-20260608225032949.png)
 
 
 
+```c
+#include<iostream>
+#include<math.h>		//数学相关函数所在的头文件
+#include<pthread.h>		//线程支持库的相关头文件
+#include<unistd.h>
+using namespace std;
+
+//定义分支线程的线程体函数
+void *task(void *arg)
+{
+	while(1)
+	{
+		cout << "hello world"<<end;
+		sleep(1):		//休眠菡数
+	}
+}
+
+int main(int argc, const char* targv[])
+{
+	pthread_t tid;	//定义一个线程号变量，用于存储创建出来的线程的线程号
+
+	//创建线程
+	if(pthread_create(&tid, NULL，task，NULL)I= 0)
+	{
+		cout << "pthread_create error" << endl;
+	}
+	//主线程
+	while(1):
+	
+	return 0;
+}
+```
 
 
 
+### 1.3Makefile文件和CMake文件
+
+#Makefile
+
+#### 1>Makefile文件
+
+##### 1>什么是Makefile
+
+```
+用于工程项目管理的一个文本文件，文件名为Makefile的文本文件
+Makefile可以大写，也可以小写，一般Makefile首字母使用大写
+如果Makefile和makefi1e两个文件都存在，系统会默认使用小写的
+```
+
+![image-20260608230232778](c++网络基础.assets/image-20260608230232778.png)
+
+#make
+
+##### 2>什么是make
+
+```
+make是一个执行Makefile的工具，是一个解释器
+用来对Makefile中的命令进行解析并执行一个shell指令
+make这个指令在/usr/bin中
+如果没有安装make	sudo yum install make
+查看是否安装成功的指令:
+make --version
+```
+
+##### 3>Makefile的用途
+
+```
+描述了整个工程的编译、链接规则
+软件项目的自动化编译，相当于给软件编译写一份脚本文件
+```
+
+##### 4>学习Makefile的必要性
+
+```
+Linux/uinx环境下开发的必备技能
+系统架构师、项目经理的核心技能
+研究开源项目、Linux内核原码的必需品
+加深对底层软件构造系统及过程的理解
+```
 
 
 
+##### 5>如何学习Makefile
+
+1.理论基础
+
+```
+软件的构造过程、程序的编译和链接：预处理-->编译-->汇编-->链接
+面向依赖的思想：
+依赖一个.cpp文件的程序
+可执行程序	<--依赖于-- .o文件 <--依赖于-- .s文件 <--依赖于-- .i文件 <--依赖于-- .cpp文件
+
+一个依赖多个.cpp文件的程序
+可执行程序	<--依赖于-- .o文件 <--依赖于-- .s文件 <--依赖于-- .i文件 <--依赖于-- .cpp文件
+			|	<--依赖于-- .o文件 <--依赖于-- .s文件 <--依赖于-- .i文件 <--依赖于-- .cpp文件
+			|	<--依赖于-- .o文件 <--依赖于-- .s文件 <--依赖于-- .i文件 <--依赖于-- .cpp文件
+			|	<--依赖于-- .o文件 <--依赖于-- .s文件 <--依赖于-- .i文件 <--依赖于-- .cpp文件
+```
+
+2.项目编程基础
+
+```
+C++程序语言基础
+c语言基础
+多文件原码管理、头文件包含、函数声明与定义
+```
 
 
 
+##### 6>Makefile的工作过程
+
+```
+Makefile本身是面向依赖进行编写的
+源文件	-->	编译	---->	目标文件	--->	链接	--->	可执行文件
+hello.cpp	---->	hello.0	--->	hell
+本质上一步就可以生成可执行程序，但是，由于在生成可执行程序时，可能会有多个文件进行参与，后期其他文件可能要进行更改，更改后，会影响
+到可执行程序的执行，其他没有更改的文件也要参与编译，浪费时间
+```
 
 
 
+##### 7>第一个Makefile
+
+1.编写一个文件
 
 
 
+2.通过终端编译程序
+
+![image-20260608231631411](c++网络基础.assets/image-20260608231631411.png)
 
 
 
+3.使用Makefile
+
+![image-20260608231957216](c++网络基础.assets/image-20260608231957216.png)
+
+```
+Makefile中的注释是以#开头
+#语法格式：I
+#目标：依赖
+#	通过依赖生成目标的指令
+#注意：指令前面必须使用同一个tab键隔开，不能使用多个空格顶过来
+hello:hello.0
+	g++ hello.0 -0 hello
+
+hello.o:hello.s
+	g++ -c hello.s -0 hello.0
+
+hello.s:hello.1
+	g++ -S hello.1 -0 hello.s
+
+hello.i:hello.cpp
+	q++ -E hello.cpp -o hello.1
+```
+
+简化的Makefile文件
+
+```
+hello:hello.0
+	g++ hello.0 -0 hello
+	
+hello.o:hello.cpp
+	g++ -c hello.cpp -o hello.o
+```
 
 
 
+4.执行Makefile文件
+
+```
+ make	--->默认找到Makefile中的第一个目标开始进行执行
+ make 目标	--->找到对应的目标进行执行
+```
+
+```
+hello:hello.0
+	g++ hello.0 -0 hello
+	
+hello.o:hello.cpp
+	g++ -c hello.cpp -o hello.o
+//此处一个规则是没有依赖，只有目标和指令
+clean:
+	rm hello.o hello
+```
+
+![image-20260609000337814](c++网络基础.assets/image-20260609000337814.png)
+
+##### 8>Makefile的语法规则
+
+1.规则
+
+构成Makefile的基本单元，构成依赖关系的核心部件
+其他内容可以看做为规则的服务
+2、变量
+类似于C++中的宏，使用变量：
+
+```
+$(变量名）或者${变量名}
+```
+
+作用：使得Makefile更加灵活
+3、条件执行
+根据某一变量的值来控制make执行或者忽略Makefile的某一部分
+4、函数 
+文本处理函数:字符串的替换、查找、过滤等待
+
+文件名的处理:读取文件/目录名、前后缀等待
+
+5.注释
+
+Makefile中的注释,是以#号开头
 
 
 
+##### 9>规则
+
+1、规则的构成：目标、目标依赖、命令
+2、语法格式
+
+```
+目标:目标依赖
+	命令
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+注意事项:
+	命令必须使用tab键开头，一般是shel1指令
+	一个规则中，可以无目标依赖，仅仅是实现某种操作
+一个规则中可以没有命令，仅仅描述依赖关系
+一个规则中，必须要有一个目标
+```
 
 
 
