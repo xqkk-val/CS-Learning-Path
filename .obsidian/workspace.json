@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/cpp/c++网络基础.md",
+                "file": "system/日记/2026-06-09.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "c++网络基础"
+              "title": "2026-06-09"
             }
           },
           {
@@ -123,13 +123,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/cpp/c++网络基础.md",
+                "file": "system/日记/2026-06-09.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "c++网络基础 的大纲"
+              "title": "2026-06-09 的大纲"
             }
           },
           {
@@ -192,12 +192,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/cpp/c++网络基础.md",
+                "file": "system/日记/2026-06-09.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "c++网络基础 的出链列表"
+              "title": "2026-06-09 的出链列表"
             }
           },
           {
@@ -219,7 +219,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 213.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -237,15 +237,16 @@
   },
   "active": "da36b4f51f6fdbf0",
   "lastOpenFiles": [
+    "system/日记/2026-06-06.md",
+    "system/日记/2026-06-09.md",
+    "notes/cpp/c++网络基础.md",
     "notes/cpp/c++网络基础.assets/image-20260609001816712.png",
     "notes/cpp/c++网络基础.assets/image-20260609001725610.png",
     "notes/cpp/c++网络基础.assets/image-20260609001159945.png",
     "notes/cpp/c++网络基础.assets/image-20260606141927367.png",
     "system/日记/2026-06-03.md",
-    "notes/cpp/c++网络基础.md",
     "system/模板/笔记模板.md",
     "system/文件IO学习进度.md",
-    "system/日记/2026-06-06.md",
     "system/日记/2026-06-04.md",
     "notes/cpp/未命名.md",
     "system/模板/未命名.md",
@@ -259,7 +260,6 @@
     "notes/linux/linux.md",
     "notes/cpp/c++网络基础.assets/image-20260604204014082.png",
     "notes/cpp/c++网络基础.assets/image-20260604203910179.png",
-    "notes/cpp/c++网络基础.assets/image-20260604202259900.png",
     "system/goals/goals-文件IO.md",
     "system/progress.md",
     "notes/mysql/mysql基本语法.md",
