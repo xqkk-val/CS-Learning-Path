@@ -8,49 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c5299b51fd101d74",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "system/日记/2026-06-03.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2026-06-03"
-            }
-          },
-          {
-            "id": "61d7e4a8678b3d7c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "system/日记/2026-06-09.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2026-06-09"
-            }
-          },
-          {
             "id": "dcf0f52ae82a9200",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/cpp/c++网络基础.md",
+                "file": "notes/cpp/c++ primer plus/c++.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "c++网络基础"
+              "title": "c++"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -118,18 +89,28 @@
         "type": "tabs",
         "children": [
           {
+            "id": "2ee0b6c0e235284c",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          },
+          {
             "id": "802efa7cbf93e918",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "system/日记/2026-06-09.md",
+                "file": "notes/cpp/c++ primer plus/c++.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2026-06-09 的大纲"
+              "title": "c++ 的大纲"
             }
           },
           {
@@ -140,16 +121,6 @@
               "state": {},
               "icon": "git-pull-request",
               "title": "Source Control"
-            }
-          },
-          {
-            "id": "2ee0b6c0e235284c",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
             }
           },
           {
@@ -192,12 +163,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "system/日记/2026-06-09.md",
+                "file": "notes/cpp/c++ primer plus/c++.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "2026-06-09 的出链列表"
+              "title": "c++ 的出链列表"
             }
           },
           {
@@ -215,11 +186,11 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 213.5
+    "width": 318.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -237,14 +208,18 @@
   },
   "active": "da36b4f51f6fdbf0",
   "lastOpenFiles": [
-    "system/日记/2026-06-06.md",
-    "system/日记/2026-06-09.md",
+    "notes/cpp/c++ primer plus/code",
     "notes/cpp/c++网络基础.md",
-    "notes/cpp/c++网络基础.assets/image-20260609001816712.png",
-    "notes/cpp/c++网络基础.assets/image-20260609001725610.png",
-    "notes/cpp/c++网络基础.assets/image-20260609001159945.png",
-    "notes/cpp/c++网络基础.assets/image-20260606141927367.png",
+    "notes/cpp/c++ primer plus/c++.md",
+    "notes/cpp/c++ primer plus",
+    "notes/cpp/cpp.md",
+    "system/日记/2026-06-09.md",
     "system/日记/2026-06-03.md",
+    "system/日记/2026-06-06.md",
+    "system/assets/c++网络基础.assets/image-20260609001816712.png",
+    "system/assets/c++网络基础.assets/image-20260609001725610.png",
+    "system/assets/c++网络基础.assets/image-20260609001159945.png",
+    "system/assets/c++网络基础.assets/image-20260606141927367.png",
     "system/模板/笔记模板.md",
     "system/文件IO学习进度.md",
     "system/日记/2026-06-04.md",
@@ -253,21 +228,20 @@
     "system/模板/日记模板.md",
     "system/模板/周记模板.md",
     "system/日记/2026-05-29.md",
-    "notes/cpp/c++网络基础.assets/image-20260606133017665.png",
-    "notes/cpp/c++网络基础.assets/image-20260606132345344.png",
-    "notes/cpp/c++网络基础.assets/image-20260606125448846.png",
-    "notes/cpp/c++网络基础.assets/image-20260604213656728.png",
+    "system/assets/c++网络基础.assets/image-20260606133017665.png",
+    "system/assets/c++网络基础.assets/image-20260606132345344.png",
+    "system/assets/c++网络基础.assets/image-20260606125448846.png",
+    "system/assets/c++网络基础.assets/image-20260604213656728.png",
     "notes/linux/linux.md",
-    "notes/cpp/c++网络基础.assets/image-20260604204014082.png",
-    "notes/cpp/c++网络基础.assets/image-20260604203910179.png",
+    "system/assets/c++网络基础.assets/image-20260604204014082.png",
+    "system/assets/c++网络基础.assets/image-20260604203910179.png",
     "system/goals/goals-文件IO.md",
     "system/progress.md",
     "notes/mysql/mysql基本语法.md",
     "notes/mysql",
     "未命名",
-    "notes/cpp/c++网络基础.assets",
+    "system/assets/c++网络基础.assets",
     "notes/cpp/c++进阶.md",
-    "notes/cpp/cpp.md",
     "README.md",
     "conflict-files-obsidian-git.md",
     "system/assets",
@@ -279,9 +253,6 @@
     "notes/cpp/c++学习进度.md",
     "notes/linux/linux-ip.md",
     "linux.assets/image-20260517154616792.png.md",
-    "system",
-    "notes/cpp/c++进阶.assets",
-    "notes/linux/Untitled.md",
-    "notes/linux/linux基本操作.md"
+    "system"
   ]
 }

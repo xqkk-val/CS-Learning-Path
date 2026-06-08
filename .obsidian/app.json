@@ -1,4 +1,5 @@
 {
   "attachmentFolderPath": "system/assets/cpp",
-  "newFileLocation": "current"
+  "newFileLocation": "current",
+  "alwaysUpdateLinks": true
 }
