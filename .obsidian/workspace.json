@@ -206,13 +206,13 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "da36b4f51f6fdbf0",
+  "active": "075776e187017b5b",
   "lastOpenFiles": [
-    "notes/cpp/c++ primer plus/code",
     "notes/cpp/c++网络基础.md",
-    "notes/cpp/c++ primer plus/c++.md",
-    "notes/cpp/c++ primer plus",
     "notes/cpp/cpp.md",
+    "notes/cpp/c++ primer plus/c++.md",
+    "notes/cpp/c++ primer plus/code",
+    "notes/cpp/c++ primer plus",
     "system/日记/2026-06-09.md",
     "system/日记/2026-06-03.md",
     "system/日记/2026-06-06.md",
@@ -252,7 +252,6 @@
     "notes/cpp/Untitled Kanban.md",
     "notes/cpp/c++学习进度.md",
     "notes/linux/linux-ip.md",
-    "linux.assets/image-20260517154616792.png.md",
-    "system"
+    "linux.assets/image-20260517154616792.png.md"
   ]
 }
