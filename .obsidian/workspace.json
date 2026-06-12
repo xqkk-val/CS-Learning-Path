@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/cpp/c++ primer plus/c++.md",
+                "file": "notes/linux/linux.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "c++"
+              "title": "linux"
             }
           }
         ]
@@ -206,11 +206,11 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "075776e187017b5b",
+  "active": "dcf0f52ae82a9200",
   "lastOpenFiles": [
+    "notes/cpp/c++ primer plus/c++.md",
     "notes/cpp/c++网络基础.md",
     "notes/cpp/cpp.md",
-    "notes/cpp/c++ primer plus/c++.md",
     "notes/cpp/c++ primer plus/code",
     "notes/cpp/c++ primer plus",
     "system/日记/2026-06-09.md",
