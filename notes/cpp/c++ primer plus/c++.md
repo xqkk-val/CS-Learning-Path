@@ -90,3 +90,6 @@ operatorop(argument-list)
   
 
 ### 13.1
+
+#### 13.1.1派生一个类
+
