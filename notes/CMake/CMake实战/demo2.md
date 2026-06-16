@@ -1,6 +1,5 @@
 ## 2. 升级 CMakeLists.txt（使用变量）
 
-bash
 
 ```
 cat > CMakeLists.txt << 'EOF'

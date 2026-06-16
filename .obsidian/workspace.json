@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/cpp/c++网络基础.md",
+                "file": "notes/CMake/CMake基础知识/CMake编译工程.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "c++网络基础"
+              "title": "CMake编译工程"
             }
           },
           {
@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/CMake/demo3.md",
+                "file": "notes/CMake/CMake实战/demo3.md",
                 "mode": "source",
                 "source": false
               },
@@ -203,8 +203,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,21 +221,24 @@
       "zk-prefixer:创建时间戳笔记": false
     }
   },
-  "active": "dcf0f52ae82a9200",
+  "active": "da36b4f51f6fdbf0",
   "lastOpenFiles": [
+    "notes/CMake/CMake基础知识/CMake指令.md",
+    "notes/CMake/CMake实战/demo2.md",
+    "notes/CMake/CMake基础知识/CMake编译工程.md",
+    "notes/CMake/CMake基础知识/CMake基础知识.md",
+    "notes/CMake/CMake基础知识/CMake基础变量.md",
+    "notes/CMake/CMake.md",
+    "notes/CMake/CMake实战/demo1.md",
+    "notes/CMake/CMake实战/demo3.md",
+    "notes/CMake/CMake实战/CMake实战.md",
+    "notes/CMake/CMake实战",
+    "notes/CMake/CMake基础知识",
+    "notes/cpp/c++网络基础.md",
     "notes/cpp/c++ primer plus/c++.md",
     "notes/cpp/cpp.md",
-    "notes/CMake/CMake实战.md",
-    "notes/CMake/demo3.md",
-    "notes/CMake/CMake基础知识.md",
-    "notes/cpp/c++网络基础.md",
-    "notes/CMake/demo1.md",
     "notes/CMake/Untitled 1.md",
     "notes/CMake/Untitled.md",
-    "notes/CMake/demo2.md",
-    "notes/CMake/CMake.md",
-    "notes/CMake/CMake指令.md",
-    "notes/CMake/未命名",
     "notes/CMake.md",
     "notes/linux/linux.md",
     "notes/未命名",
@@ -257,10 +259,8 @@
     "system/日记/gcc与g++命令主要区别.md",
     "system/日记/2026-06-16.md",
     "notes/linux/linux-ip.md",
-    "system/日记/2026-06-12.md",
     "notes/cpp/c++ primer plus/code",
     "notes/cpp/c++ primer plus",
-    "system/日记/2026-06-09.md",
     "system/assets/c++网络基础.assets/image-20260609001816712.png",
     "system/assets/c++网络基础.assets/image-20260609001725610.png",
     "system/assets/c++网络基础.assets/image-20260609001159945.png",
@@ -268,7 +268,6 @@
     "system/assets/c++网络基础.assets/image-20260606133017665.png",
     "system/assets/c++网络基础.assets/image-20260606132345344.png",
     "system/assets/c++网络基础.assets/image-20260606125448846.png",
-    "system/assets/c++网络基础.assets/image-20260604213656728.png",
-    "notes/mysql"
+    "system/assets/c++网络基础.assets/image-20260604213656728.png"
   ]
 }
