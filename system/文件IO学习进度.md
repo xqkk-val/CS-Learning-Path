@@ -1,7 +1,5 @@
 ---
-
 kanban-plugin: list
-
 ---
 
 ## - 📋 待学习
@@ -13,6 +11,11 @@ kanban-plugin: list
 - [ ] 2.08 lseek、图像操作、IO总结
 - [ ] 2.09 混合IO、dup/dup2重定向
 - [ ] 2.10 stat/fstat、目录操作
+- [ ] c++11
+- [ ] c++17
+- [ ] redis
+- [ ] rocketmq
+- [ ] 聊天室程序
 
 
 ## - 🔄 进行中
@@ -30,6 +33,6 @@ kanban-plugin: list
 
 %% kanban:settings
 ```
-{"kanban-plugin":"list","list-collapse":[false,false,true]}
+{"kanban-plugin":"list","list-collapse":[false,false,true],"show-checkboxes":true}
 ```
 %%
