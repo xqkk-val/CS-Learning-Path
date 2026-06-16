@@ -182,7 +182,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -204,6 +204,9 @@
   },
   "active": "dcf0f52ae82a9200",
   "lastOpenFiles": [
+    "notes/cpp/cpp.assets/image-20260616112815022.png",
+    "notes/cpp/cpp.assets/image-20260616112456180.png",
+    "notes/cpp/cpp.assets",
     "notes/cpp/cpp.md",
     "notes/cpp/c++网络基础.md",
     "notes/cpp/C++17.md",
@@ -239,16 +242,13 @@
     "system/assets/c++网络基础.assets/image-20260606125448846.png",
     "system/assets/c++网络基础.assets/image-20260604213656728.png",
     "system/assets/c++网络基础.assets/image-20260604204014082.png",
-    "system/assets/c++网络基础.assets/image-20260604203910179.png",
     "notes/mysql/mysql基本语法.md",
     "notes/mysql",
     "未命名",
     "system/assets/c++网络基础.assets",
     "notes/cpp/c++进阶.md",
     "README.md",
-    "conflict-files-obsidian-git.md",
     "system/assets",
-    "system/新建文件夹",
-    "notes/cpp/未命名.base"
+    "system/新建文件夹"
   ]
 }
