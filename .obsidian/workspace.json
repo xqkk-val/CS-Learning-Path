@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/linux/linux.md",
+                "file": "notes/CMake/CMake.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "linux"
+              "title": "CMake"
             }
           }
         ]
@@ -198,6 +198,12 @@
   },
   "active": "dcf0f52ae82a9200",
   "lastOpenFiles": [
+    "notes/linux/linux.md",
+    "notes/未命名",
+    "notes/CMake",
+    "notes/Untitled Folder",
+    "notes/CMake/CMake.md",
+    "notes/Untitled.md",
     "notes/cpp/cpp.assets/image-20260616112815022.png",
     "notes/cpp/cpp.assets/image-20260616112456180.png",
     "notes/cpp/cpp.assets",
@@ -216,7 +222,6 @@
     "system/日记/2026-06-16.md",
     "notes/linux/linux-ip.md",
     "system/日记/2026-06-12.md",
-    "notes/linux/linux.md",
     "notes/cpp/c++ primer plus/code",
     "notes/cpp/c++ primer plus",
     "system/日记/2026-06-09.md",
@@ -235,14 +240,8 @@
     "system/assets/c++网络基础.assets/image-20260606132345344.png",
     "system/assets/c++网络基础.assets/image-20260606125448846.png",
     "system/assets/c++网络基础.assets/image-20260604213656728.png",
-    "system/assets/c++网络基础.assets/image-20260604204014082.png",
     "notes/mysql/mysql基本语法.md",
     "notes/mysql",
-    "未命名",
-    "system/assets/c++网络基础.assets",
-    "notes/cpp/c++进阶.md",
-    "README.md",
-    "system/assets",
-    "system/新建文件夹"
+    "未命名"
   ]
 }
