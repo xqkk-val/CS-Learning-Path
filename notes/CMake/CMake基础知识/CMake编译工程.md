@@ -1,3 +1,3 @@
 CMake目录结构：项目主目录中会放一个CMakeLists.txt的文本文档，后期使用cmake指令时，依赖的就是该文档
 1>包含源文件的子文件夹中包含CMakeLists.txt文件时，主目录的CMakeLists.txt要通过add_subdirector添加子目录
-2>包含源文件的子文件夹中不包含CMakeLists.txt文件时，，子目录编译规则，体现在主目录中的CMakeLists.txtfhcbcv`
+2>包含源文件的子文件夹中不包含CMakeLists.txt文件时，，子目录编译规则，体现在主目录中的CMakeLists.txtfhcbcvbcvbcb`
