@@ -11,14 +11,12 @@
             "id": "dcf0f52ae82a9200",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "notes/cpp/c++网络基础.md",
-                "mode": "source",
-                "source": false
+                "file": "system/assets/c++网络基础.assets/image-20260606132345344.png"
               },
-              "icon": "lucide-file",
-              "title": "c++网络基础"
+              "icon": "lucide-image",
+              "title": "image-20260606132345344"
             }
           },
           {
@@ -223,6 +221,20 @@
   },
   "active": "dcf0f52ae82a9200",
   "lastOpenFiles": [
+    "system/assets/c++网络基础.assets/image-20260609000337814.png",
+    "system/assets/c++网络基础.assets/image-20260608231631411.png",
+    "system/assets/c++网络基础.assets/image-20260606133017665.png",
+    "system/assets/c++网络基础.assets/image-20260608225032949.png",
+    "system/assets/c++网络基础.assets/image-20260606141927367.png",
+    "system/assets/c++网络基础.assets/image-20260603204634993.png",
+    "system/assets/c++网络基础.assets/image-20260603203739658.png",
+    "system/assets/cpp.assets/image-20260616112456180.png",
+    "system/assets/cpp.assets/image-20260616112815022.png",
+    "system/assets/c++网络基础.assets/image-20260603203551407.png",
+    "system/assets/c++网络基础.assets/image-20260603203714043.png",
+    "system/日记/2026-05-29.md",
+    "system/日记/2026-07-11.md",
+    "notes/cpp/c++网络基础.md",
     "notes/CMake/CMake基础知识/CMake编译工程.md",
     "notes/CMake/CMake基础知识/CMake指令.md",
     "notes/CMake/CMake实战/demo2.md",
@@ -234,7 +246,6 @@
     "notes/CMake/CMake实战/CMake实战.md",
     "notes/CMake/CMake实战",
     "notes/CMake/CMake基础知识",
-    "notes/cpp/c++网络基础.md",
     "notes/cpp/c++ primer plus/c++.md",
     "notes/cpp/cpp.md",
     "notes/CMake/Untitled 1.md",
@@ -245,8 +256,6 @@
     "notes/CMake",
     "notes/Untitled Folder",
     "notes/Untitled.md",
-    "system/assets/cpp.assets/image-20260616112815022.png",
-    "system/assets/cpp.assets/image-20260616112456180.png",
     "system/assets/cpp.assets",
     "notes/cpp/C++17.md",
     "system/goals/goals-文件IO.md",
@@ -256,18 +265,7 @@
     "notes/未命名.md",
     "notes/RocketMQ",
     "notes/redis",
-    "system/日记/gcc与g++命令主要区别.md",
-    "system/日记/2026-06-16.md",
-    "notes/linux/linux-ip.md",
     "notes/cpp/c++ primer plus/code",
-    "notes/cpp/c++ primer plus",
-    "system/assets/c++网络基础.assets/image-20260609001816712.png",
-    "system/assets/c++网络基础.assets/image-20260609001725610.png",
-    "system/assets/c++网络基础.assets/image-20260609001159945.png",
-    "system/assets/c++网络基础.assets/image-20260606141927367.png",
-    "system/assets/c++网络基础.assets/image-20260606133017665.png",
-    "system/assets/c++网络基础.assets/image-20260606132345344.png",
-    "system/assets/c++网络基础.assets/image-20260606125448846.png",
-    "system/assets/c++网络基础.assets/image-20260604213656728.png"
+    "notes/cpp/c++ primer plus"
   ]
 }
