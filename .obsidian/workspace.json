@@ -185,11 +185,11 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 351.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,7 +207,7 @@
       "zk-prefixer:创建时间戳笔记": false
     }
   },
-  "active": "1f4b9cf9b85cae3d",
+  "active": "da36b4f51f6fdbf0",
   "lastOpenFiles": [
     "system/assets/c++网络基础.assets/image-20260606132345344.png",
     "system/assets/c++网络基础.assets/image-20260609000337814.png",
