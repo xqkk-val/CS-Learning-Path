@@ -11,14 +11,14 @@
             "id": "dcf0f52ae82a9200",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "notes/cpp/c++网络基础.md",
-                "bFile": "notes/cpp/c++网络基础.md",
-                "aRef": ""
+                "file": "notes/cpp/c++网络基础.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: c++网络基础  (Working Tree)"
+              "icon": "lucide-file",
+              "title": "c++网络基础"
             }
           }
         ]
