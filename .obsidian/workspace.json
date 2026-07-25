@@ -148,12 +148,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/cpp/c++ primer plus/c++.md",
+                "file": "notes/cpp/c++网络基础.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "c++ 的出链列表"
+              "title": "c++网络基础 的出链列表"
             }
           },
           {
@@ -176,12 +176,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "notes/cpp/c++网络基础.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "c++网络基础 的大纲"
             }
           }
         ],
@@ -189,7 +190,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 351.5
+    "width": 299.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,8 +208,9 @@
       "zk-prefixer:创建时间戳笔记": false
     }
   },
-  "active": "dcf0f52ae82a9200",
+  "active": "da36b4f51f6fdbf0",
   "lastOpenFiles": [
+    "notes/cpp/c++ primer plus/c++.md",
     "notes/cpp/c++网络基础.md",
     "system/assets/c++网络基础.assets/image-20260606132345344.png",
     "system/assets/c++网络基础.assets/image-20260609000337814.png",
@@ -233,7 +235,6 @@
     "notes/CMake/CMake实战/CMake实战.md",
     "notes/CMake/CMake实战",
     "notes/CMake/CMake基础知识",
-    "notes/cpp/c++ primer plus/c++.md",
     "notes/cpp/cpp.md",
     "notes/CMake/Untitled 1.md",
     "notes/CMake/Untitled.md",
