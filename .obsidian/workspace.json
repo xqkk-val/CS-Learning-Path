@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "9f8bead0db39314b",
+        "id": "1b8a4d9981c390d0",
         "type": "tabs",
         "children": [
           {
-            "id": "dcf0f52ae82a9200",
+            "id": "7340510be3b57807",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -143,20 +143,6 @@
             }
           },
           {
-            "id": "326843bc416b3caf",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "notes/cpp/c++网络基础.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "c++网络基础 的出链列表"
-            }
-          },
-          {
             "id": "687d1bf146a604d6",
             "type": "leaf",
             "state": {
@@ -184,13 +170,27 @@
               "icon": "lucide-list",
               "title": "c++网络基础 的大纲"
             }
+          },
+          {
+            "id": "326843bc416b3caf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "notes/cpp/c++网络基础.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "c++网络基础 的出链列表"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 299.5
+    "width": 283.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -208,10 +208,15 @@
       "zk-prefixer:创建时间戳笔记": false
     }
   },
-  "active": "da36b4f51f6fdbf0",
+  "active": "a54bfcc8af822184",
   "lastOpenFiles": [
-    "notes/cpp/c++ primer plus/c++.md",
+    "notes/cpp/cpp.md",
+    "notes/cpp/C++11.md",
+    "notes/cpp/C++17.md",
     "notes/cpp/c++网络基础.md",
+    "操作系统",
+    "notes/Untitled Folder",
+    "notes/cpp/c++ primer plus/c++.md",
     "system/assets/c++网络基础.assets/image-20260606132345344.png",
     "system/assets/c++网络基础.assets/image-20260609000337814.png",
     "system/assets/c++网络基础.assets/image-20260608231631411.png",
@@ -235,21 +240,16 @@
     "notes/CMake/CMake实战/CMake实战.md",
     "notes/CMake/CMake实战",
     "notes/CMake/CMake基础知识",
-    "notes/cpp/cpp.md",
     "notes/CMake/Untitled 1.md",
     "notes/CMake/Untitled.md",
     "notes/CMake.md",
     "notes/linux/linux.md",
-    "notes/未命名",
     "notes/CMake",
-    "notes/Untitled Folder",
     "notes/Untitled.md",
     "system/assets/cpp.assets",
-    "notes/cpp/C++17.md",
     "system/goals/goals-文件IO.md",
     "system/文件IO学习进度.md",
     "system/progress.md",
-    "notes/cpp/C++11.md",
     "notes/未命名.md",
     "notes/RocketMQ",
     "notes/redis",
