@@ -701,15 +701,15 @@ $<		--->第一个依赖
 
 #进程指令 #进程操作指令 #进程相关属性
 
-1>	ps指令	:	能够查看当前运行的进程相关属性
+1>	**ps指令**	:	能够查看当前运行的进程相关属性
+
+ #进程关系指令
 
 ​		ps -ef	:	能够表示进程之间的关系(进程关系)
 
 ```
 ps -ef
 ```
-
- #进程关系指令
 
 ```
 UID          PID    PPID  C STIME TTY          TIME CMD
@@ -740,11 +740,11 @@ TTY	:	如果是问号表示这个进程不依赖终端而存在
 
 px -ajx	:	能够显示当前进程的状态(进程状态,进程组)
 
+#进程状态指令
+
 ```
 px -ajx
 ```
-
-#进程状态指令
 
 ```
  PPID     PID    PGID     SID TTY        TPGID STAT   UID   TIME COMMAND
@@ -763,7 +763,11 @@ STAT	:	进程的状态
 
 ps -aux	:	查看当前进程对CPU和内存的占有率
 
+#进程CPU占有率指令
 
+```
+ps -aux
+```
 
 ```
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
@@ -779,9 +783,69 @@ root          11  0.0  0.0      0     0 ?        I<   18:42   0:00 [kworker/R-mm
 root          13  0.0  0.0      0     0 ?        I    18:42   0:00 [rcu_tasks_kthre]
 root          14  0.0  0.0      0     0 ?        I    18:42   0:00 [rcu_tasks_rude_]
 root          15  0.0  0.0      0     0 ?        I    18:42   0:00 [rcu_tasks_trace]
+%CPU	:	CPU占有率
+%MEN	:	内存占有率
+
 ```
 
-动态查看进程的运行属性
+2>	top	:	动态查看进程的运行属性
+
+3秒一更新
+
+```
+xq          2849  0.0  0.9 235600  6916 pts/1    R+   19:08   0:00 ps -aux
+[xq@localhost ~]$ top
+top - 19:13:40 up 31 min,  1 user,  load average: 0.06, 0.38, 0.23
+Tasks: 161 total,   1 running, 160 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.0 id,  0.0 wa,  0.3 hi,  0.0 si,  0.0 st
+MiB Mem :    732.2 total,    363.3 free,    329.5 used,    153.5 buff/cache
+MiB Swap:   2108.0 total,   1912.2 free,    195.8 used.    402.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                 
+    783 root      20   0       0      0      0 I   0.3   0.0   0:00.09 kworker/u512:4-events_unbound                                                           
+   2799 root      20   0       0      0      0 I   0.3   0.0   0:00.71 kworker/0:2-events                                                                      
+      1 root      20   0  174848   8236   5312 S   0.0   1.1   0:01.09 systemd                                                                                 
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd                                                                                
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_                                                                         
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_gp                                                                        
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-sync_wq                                                                       
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-slub_flushwq                                                                  
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-netns                                                                         
+      9 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri                                                             
+     11 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mm_percpu_wq                                                                  
+     13 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_kthre            
+```
+
+3>	kill	:	发送信号的指令
+
+#发送信号的指令
+
+​		使用方式: kill -信号号 进程号
+
+​		可以通过指令:	 kill -l	查看能发送的信号有哪些
+
+```
+1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL       5) SIGTRAP
+ 6) SIGABRT      7) SIGBUS       8) SIGFPE       9) SIGKILL     10) SIGUSR1
+11) SIGSEGV     12) SIGUSR2     13) SIGPIPE     14) SIGALRM     15) SIGTERM
+16) SIGSTKFLT   17) SIGCHLD     18) SIGCONT     19) SIGSTOP     20) SIGTSTP
+21) SIGTTIN     22) SIGTTOU     23) SIGURG      24) SIGXCPU     25) SIGXFSZ
+26) SIGVTALRM   27) SIGPROF     28) SIGWINCH    29) SIGIO       30) SIGPWR
+31) SIGSYS      34) SIGRTMIN    35) SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3
+38) SIGRTMIN+4  39) SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8
+43) SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12 47) SIGRTMIN+13
+48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12
+53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7
+58) SIGRTMAX-6  59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2
+63) SIGRTMAX-1  64) SIGRTMAX
+
+1.一共可以发送62个信号,前32个是稳定信号,后面是不稳定信号
+2.常用的信号
+SIGHUP	:	当进程所在的终端被关闭后,终端会给运行在当前终端的每个进程放送该信号,默认结束进程
+SIGINT
+```
+
+
 
 ### 二.	多进程实现
 
