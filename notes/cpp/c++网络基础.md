@@ -1,3 +1,7 @@
+---
+aliasesaliases:
+  - "11"
+---
 # C++网络高级
 
 ## 一  linux入门
@@ -665,7 +669,7 @@ $<		--->第一个依赖
 
 #### 1.6	进程PID的概念
 
-#PID#PPID
+#PID #PPID
 
 1>	PID(process ID)	:进程号,进程号是一个大于等于0的整数值,是进程的唯一标识,不可能重复.
 
@@ -695,7 +699,89 @@ $<		--->第一个依赖
 
 #### 1.8	有关进程操作的指令
 
+#进程指令 #进程操作指令 #进程相关属性
+
 1>	ps指令	:	能够查看当前运行的进程相关属性
+
+​		ps -ef	:	能够表示进程之间的关系(进程关系)
+
+```
+ps -ef
+```
+
+ #进程关系指令
+
+```
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  1 18:42 ?        00:00:00 /usr/lib/systemd/systemd --switched-root --system --deserialize 
+root           2       0  0 18:42 ?        00:00:00 [kthreadd]
+root           3       2  0 18:42 ?        00:00:00 [pool_workqueue_]
+root           4       2  0 18:42 ?        00:00:00 [kworker/R-rcu_gp]
+root           5       2  0 18:42 ?        00:00:00 [kworker/R-sync_wq]
+root           6       2  0 18:42 ?        00:00:00 [kworker/R-slub_flushwq]
+root           7       2  0 18:42 ?        00:00:00 [kworker/R-netns]
+root           8       2  0 18:42 ?        00:00:00 [kworker/0:0-cgroup_destroy]
+root           9       2  0 18:42 ?        00:00:00 [kworker/0:0H-events_highpri]
+root          10       2  0 18:42 ?        00:00:00 [kworker/u512:0-events_unbound]
+root          11       2  0 18:42 ?        00:00:00 [kworker/R-mm_percpu_wq]
+root          12       2  1 18:42 ?        00:00:00 [kworker/u512:1-events_unbound]
+root          13       2  0 18:42 ?        00:00:00 [rcu_tasks_kthre]
+root          14       2  0 18:42 ?        00:00:00 [rcu_tasks_rude_]
+root          15       2  0 18:42 ?        00:00:00 [rcu_tasks_trace]
+UID	:	用户ID号
+PID	:	进程号
+PPID :	父进程号
+C	:	用处不大
+STIME	:	开始运行的时间(日期)
+TIME	:	运行的时间
+TTY	:	如果是问号表示这个进程不依赖终端而存在
+
+```
+
+px -ajx	:	能够显示当前进程的状态(进程状态,进程组)
+
+```
+px -ajx
+```
+
+#进程状态指令
+
+```
+ PPID     PID    PGID     SID TTY        TPGID STAT   UID   TIME COMMAND
+      0       1       1       1 ?             -1 Ss       0   0:00 /usr/lib/systemd/systemd --switched-root --system
+      0       2       0       0 ?             -1 S        0   0:00 [kthreadd]
+      2       3       0       0 ?             -1 S        0   0:00 [pool_workqueue_]
+      2       4       0       0 ?             -1 I<       0   0:00 [kworker/R-rcu_gp]
+      2       5       0       0 ?             -1 I<       0   0:00 [kworker/R-sync_wq]
+      2       6       0       0 ?             -1 I<       0   0:00 [kworker/R-slub_flushwq]
+      2       7       0       0 ?             -1 I<       0   0:00 [kworker/R-netns]
+
+PGID	:	进程组ID
+SID	:	会话组ID
+STAT	:	进程的状态
+```
+
+ps -aux	:	查看当前进程对CPU和内存的占有率
+
+
+
+```
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  1.0 174848  7776 ?        Ss   18:42   0:01 /usr/lib/systemd/systemd --switched-root --system --deserialize 31 rhgb
+root           2  0.0  0.0      0     0 ?        S    18:42   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    18:42   0:00 [pool_workqueue_]
+root           4  0.0  0.0      0     0 ?        I<   18:42   0:00 [kworker/R-rcu_gp]
+root           5  0.0  0.0      0     0 ?        I<   18:42   0:00 [kworker/R-sync_wq]
+root           6  0.0  0.0      0     0 ?        I<   18:42   0:00 [kworker/R-slub_flushwq]
+root           7  0.0  0.0      0     0 ?        I<   18:42   0:00 [kworker/R-netns]
+root           9  0.0  0.0      0     0 ?        I<   18:42   0:00 [kworker/0:0H-events_highpri]
+root          11  0.0  0.0      0     0 ?        I<   18:42   0:00 [kworker/R-mm_percpu_wq]
+root          13  0.0  0.0      0     0 ?        I    18:42   0:00 [rcu_tasks_kthre]
+root          14  0.0  0.0      0     0 ?        I    18:42   0:00 [rcu_tasks_rude_]
+root          15  0.0  0.0      0     0 ?        I    18:42   0:00 [rcu_tasks_trace]
+```
+
+动态查看进程的运行属性
 
 ### 二.	多进程实现
 

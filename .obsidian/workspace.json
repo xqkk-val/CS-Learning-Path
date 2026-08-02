@@ -53,11 +53,11 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#cmake版本支持指令",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
-                "extraContext": false,
+                "extraContext": true,
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
@@ -74,7 +74,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -190,7 +191,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 283.5
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -208,12 +210,24 @@
       "zk-prefixer:创建时间戳笔记": false
     }
   },
-  "active": "a54bfcc8af822184",
+  "active": "c2e5a84b2c96e5fc",
   "lastOpenFiles": [
+    "202608021902.md",
+    "notes/cpp/c++网络基础.md",
+    "notes/CMake/CMake基础知识/CMake基础变量.md",
+    "system/模板/日记模板.md",
+    "notes/CMake/CMake实战/CMake实战.md",
+    "notes/linux/linux-ip.md",
+    "system/文件IO学习进度.md",
+    "notes/linux/linux.md",
+    "system/日记/2026-07-11.md",
+    "system/goals/goals-文件IO.md",
+    "system/日记/2026-06-09.md",
+    "notes/CMake/CMake基础知识/CMake编译工程.md",
+    "README.md",
     "notes/cpp/cpp.md",
     "notes/cpp/C++11.md",
     "notes/cpp/C++17.md",
-    "notes/cpp/c++网络基础.md",
     "操作系统",
     "notes/Untitled Folder",
     "notes/cpp/c++ primer plus/c++.md",
@@ -228,29 +242,18 @@
     "system/assets/cpp.assets/image-20260616112456180.png",
     "system/assets/cpp.assets/image-20260616112815022.png",
     "system/日记/2026-05-29.md",
-    "system/日记/2026-07-11.md",
-    "notes/CMake/CMake基础知识/CMake编译工程.md",
     "notes/CMake/CMake基础知识/CMake指令.md",
     "notes/CMake/CMake实战/demo2.md",
     "notes/CMake/CMake基础知识/CMake基础知识.md",
-    "notes/CMake/CMake基础知识/CMake基础变量.md",
     "notes/CMake/CMake.md",
     "notes/CMake/CMake实战/demo1.md",
     "notes/CMake/CMake实战/demo3.md",
-    "notes/CMake/CMake实战/CMake实战.md",
     "notes/CMake/CMake实战",
     "notes/CMake/CMake基础知识",
     "notes/CMake/Untitled 1.md",
     "notes/CMake/Untitled.md",
-    "notes/CMake.md",
-    "notes/linux/linux.md",
     "notes/CMake",
-    "notes/Untitled.md",
     "system/assets/cpp.assets",
-    "system/goals/goals-文件IO.md",
-    "system/文件IO学习进度.md",
-    "system/progress.md",
-    "notes/未命名.md",
     "notes/RocketMQ",
     "notes/redis",
     "notes/cpp/c++ primer plus/code",
