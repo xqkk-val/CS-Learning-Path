@@ -9,9 +9,6 @@ aliasesaliases:
 ### 1.1>C++环境的搭建
 
 #### 1>环境搭建
-dsadasd
-dsafsfsdfsd
-
 #linux #环境 #gcc
 1、安装g++编译环境、gcc编译环境
 
@@ -605,7 +602,7 @@ $<		--->第一个依赖
 1.1	IO概念
 
 1>	IO：顾名思义就是输入输出，程序与外部设备进行信息交换的过程称为IO操作
-2>	最先接触的iO：#include<stdio.h标准的输入输出头文件
+		2>	最先接触的iO：#include<stdio.h>标准的输入输出头文件
 
 ### 二、标准IO
 

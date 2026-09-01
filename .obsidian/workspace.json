@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "byModifiedTime",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -53,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "信号",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +76,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -209,7 +210,7 @@
       "zk-prefixer:创建时间戳笔记": false
     }
   },
-  "active": "da36b4f51f6fdbf0",
+  "active": "075776e187017b5b",
   "lastOpenFiles": [
     "notes/cpp/c++网络基础.assets/image-20260802193045449.png",
     "202608021902.md",
