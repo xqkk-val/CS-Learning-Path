@@ -707,6 +707,102 @@ int main(int argc, const char *argv[])
 }
 ```
 
+#### 2.4 关闭文件: fclose
+
+```
+	 #include<stdio.h>
+ 
+ 	int fclose(FILE *stream);
+	功能: 关闭指定的文件
+ 	参数: 要关闭的文件指针(由fopen返回的结果)
+ 	返回值: 成功执行返回0,失败返回EOF并置位错误码
+```
+
+```c++
+#include "stdio.h" //标准的输入输出文件
+
+int main(int argc, const char *argv[])
+{
+    // 1.定义一个文件指针
+    FILE *fp = NULL;
+    // 以只读的形式打开一个不存在的文件,并将返回结果存入到fp指针中
+    // fp = fopen("./file.txt","r");
+    // 此时会报错,原因是以只读的形式代开
+    fp = fopen("./file.txt", "w");
+    if (fp == NULL)
+    {
+        printf("fopen error\n");
+        return -1;
+    }
+    printf("fopen success\n");
+
+    // 2.关闭文件
+    fclose(fp);
+
+    return 0;
+}
+```
+
+#### 2.5	关于错误码的问题
+
+#错误码#错误信息
+
+1>	概念: 当内核提供的函数出错后,内核空间会向用户空间反馈一个错误信息,由于错误信息比较多也比较杂,系统就给不同的错误信息起了一个编号,用一个整数表示,这个整数就是错误码
+
+2>	错误码都是大于或等于0的数字:
+
+​			0:表示成功
+
+​			2:表示文件或目录不存在
+
+3>关于错误码的处理函数  (strerror,perror)
+
+```
+#include <error.h>
+int errno;
+
+//将错误码对应的错误信息转换处理
+	#include <string.h>
+	
+	char *strerror(int errnum)
+	功能: 将错误码转换位错误信息描述
+	参数: 错误码
+	返回值: 错误信息字符串描述
+	
+//只打印错误码对应的错误信息的函数(推荐)
+	#include <stdio.h>
+	
+	voide perror(const char *s);
+	功能: 输出当前错误码对应的错误信息
+	参数:提示符号,会原样打印出来,并且会在提示数据后面加上冒号,并输出完后,自动换行
+	返回值:无
+```
+
+```c++
+#include "stdio.h"  	//标准的输入输出文件
+#include <errno.h>  	//错误码所在的头文件
+#include <string.h>     //字符串处理的头文件
+int main(int argc, const char *argv[])
+{
+    // 1.定义一个文件指针
+    FILE *fp = NULL;
+
+    fp = fopen("./file.txt", "r");
+    if (fp == NULL)
+    {
+        //printf("fopen error: %d,errmsg: %s\n", errno,strerror(errno));    //打印错误信息,并输出错误码2
+        perror("fopen error");      //打印当前错误码对应的错误信息
+        return -1;
+    }
+    printf("fopen success\n");
+
+    // 2.关闭文件
+    fclose(fp);
+
+    return 0;
+}
+```
+
 
 
 ### 三、文件IO
