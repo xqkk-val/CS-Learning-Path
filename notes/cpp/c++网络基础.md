@@ -803,7 +803,20 @@ int main(int argc, const char *argv[])
 }
 ```
 
+#### 2.6	单字符读写:  fputc/fgetc
 
+```
+	 #include <stdio.h>
+
+     int fgetc(FILE *stream);
+     功能:从指定文件中读取一个字符数据,并以无符号整数的形式返回
+     参数:文件指针
+     返回值:成功返回读取的字符du
+```
+
+
+
+#### 2.7
 
 ### 三、文件IO
 
