@@ -751,9 +751,42 @@ int main(int argc, const char *argv[])
 
 2>	错误码都是大于或等于0的数字:
 
-​			0:表示成功
-
-​			2:表示文件或目录不存在
+```
+#define EPERM            1      /* Operation not permitted */
+#define ENOENT           2      /* No such file or directory */
+#define ESRCH            3      /* No such process */
+#define EINTR            4      /* Interrupted system call */
+#define EIO              5      /* I/O error */
+#define ENXIO            6      /* No such device or address */
+#define E2BIG            7      /* Argument list too long */
+#define ENOEXEC          8      /* Exec format error */
+#define EBADF            9      /* Bad file number */
+#define ECHILD          10      /* No child processes */
+#define EAGAIN          11      /* Try again */
+#define ENOMEM          12      /* Out of memory */
+#define EACCES          13      /* Permission denied */
+#define EFAULT          14      /* Bad address */
+#define ENOTBLK         15      /* Block device required */
+#define EBUSY           16      /* Device or resource busy */
+#define EEXIST          17      /* File exists */
+#define EXDEV           18      /* Cross-device link */
+#define ENODEV          19      /* No such device */
+#define ENOTDIR         20      /* Not a directory */
+#define EISDIR          21      /* Is a directory */
+#define EINVAL          22      /* Invalid argument */
+#define ENFILE          23      /* File table overflow */
+#define EMFILE          24      /* Too many open files */
+#define ENOTTY          25      /* Not a typewriter */
+#define ETXTBSY         26      /* Text file busy */
+#define EFBIG           27      /* File too large */
+#define ENOSPC          28      /* No space left on device */
+#define ESPIPE          29      /* Illegal seek */
+#define EROFS           30      /* Read-only file system */
+#define EMLINK          31      /* Too many links */
+#define EPIPE           32      /* Broken pipe */
+#define EDOM            33      /* Math argument out of domain of func */
+#define ERANGE          34      /* Math result not representable */
+```
 
 3>关于错误码的处理函数  (strerror,perror)
 
@@ -811,12 +844,27 @@ int main(int argc, const char *argv[])
      int fgetc(FILE *stream);
      功能:从指定文件中读取一个字符数据,并以无符号整数的形式返回
      参数:文件指针
-     返回值:成功返回读取的字符du
+     返回值:成功返回读取的字符对应的无符号整数,失败返回EOF并置位错误码
 ```
 
 
 
 #### 2.7
+
+#### 补充知识:
+
+关于追代码工具ctags的使用
+
+```
+1.安装ctags: sudo yum install ctags
+2.进入 /usr/include 目录下,执行sudo ctags -R 指令
+3.该目录下会多出一个tags的索引文件
+4.追相关内容的指令:vi -t 内容
+	继续先后追内容:ctrl + ]
+	退出追代码工具: 底行模式下输入q,回车
+```
+
+
 
 ### 三、文件IO
 
