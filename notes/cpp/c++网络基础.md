@@ -651,6 +651,39 @@ stdout: 标准输出指针
 
 #### 2.3	打开文件: fopen
 
+```
+	#include <stdio.h>		//该函数所在的头文件
+	
+	FILE *fopen(const char *path, const char *mode);
+	功能: 打开一个文件,并返回当前文件的文件指针
+	参数1: 表示文件路径,是一个字符串
+	参数2: 打开文件的方式,也是一个字符串,字符串必须以下的字符开头
+	The fopen() function opens the file whose name is the string pointed to by pathname and associates a stream with it.
+    The argument mode points to a string beginning with one of the following sequences (possibly followed by additional characters, as described below):
+
+       r      Open text file for reading.  The stream is positioned at the beginning of the file.
+以只读的形式打开文件,文件光标定位在开头部分
+
+       r+     Open for reading and writing.  The stream is positioned at the beginning of the file.
+以读写的方式打开文件,文件光标定位在开头部分
+
+       w      Truncate file to zero length or create text file for writing.  The stream is positioned at the beginning of the file.
+以只写的方式打开文件,如果文件不存在,就创建文件,如果文件存在,就清空,光标定位在开头
+
+       w+     Open for reading and writing.  The file is created if it does not exist, otherwise it is truncated.  The stream is positioned at the beginning of the file.
+以读写的方式打开文件,如果文件不存在,就创建文件,如果文件存在,就清空,光标定位在开头
+
+       a      Open for appending (writing at end of file).  The file is created if it does not exist.  The stream is positioned at the end of the file.
+以追加(结尾写)的形式打开文件,如果文件不存在就创建文件,光标定位在文件末尾
+
+       a+     Open  for reading and appending (writing at end of file).  The file is created if it does not exist.  Output is always appended to the end of the file.  POSIX is silent on what the initial read position is when using this mode.  For glibc, the initial file position for reading is at the beginning of the file, but for Android/BSD/MacOS, the initial file position for reading is at the end of  the file.
+以读写的形式打开文件,如果文件不存在就创建文件,如果文件存在,读取操作光标定位在开头,写操作光标定位在结尾
+
+返回值: che
+```
+
+
+
 ### 三、文件IO
 
 ## 第三章:	多进程编程
