@@ -679,7 +679,32 @@ stdout: 标准输出指针
        a+     Open  for reading and appending (writing at end of file).  The file is created if it does not exist.  Output is always appended to the end of the file.  POSIX is silent on what the initial read position is when using this mode.  For glibc, the initial file position for reading is at the beginning of the file, but for Android/BSD/MacOS, the initial file position for reading is at the end of  the file.
 以读写的形式打开文件,如果文件不存在就创建文件,如果文件存在,读取操作光标定位在开头,写操作光标定位在结尾
 
-返回值: che
+返回值: 成功返回
+```
+
+```c++
+#include"stdio.h"       //标准的输入输出文件
+
+
+int main(int argc, const char *argv[])
+{
+    //1.定义一个文件指针
+    FILE *fp = NULL;
+    //以只读的形式打开一个不存在的文件,并将返回结果存入到fp指针中
+    //fp = fopen("./file.txt","r");
+    //此时会报错,原因是以只读的形式打开一个不存在的文件,如果文件存在就清空
+    fp = fopen("./file.txt","w");
+    if(fp == NULL)
+    {
+        printf("fopen error\n");
+        return -1;
+    }
+    printf("fopen success\n");
+    
+    
+    
+    return 0;
+}
 ```
 
 
