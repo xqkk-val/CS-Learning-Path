@@ -904,13 +904,67 @@ int main(int argc, const char *argv[])
 
 使用fgetch额fputc完成两个文件的拷贝工作,实现指令cp的功能:	cp srcfile destgile
 
+```cpp
+#include <stdio.h>
+
+int main(int argc, const char *argv[])
+{
+    // 判断外部传参是否为3（程序名 + 源文件 + 目标文件）
+    if(argc != 3){
+        fprintf(stderr, "Usage: %s <source_file> <dest_file>\n", argv[0]);
+        return -1;
+    }
+
+    //以只读的方式打开源文件,以只写的方式打开目标文件
+    FILE *srcfp = NULL;
+    FILE *destfp = NULL;
+    if((srcfp = fopen(argv[1], "r")) == NULL )
+    {
+        perror("srcfp open error");
+        return -1;
+    }
+    if((destfp = fopen(argv[2],"w")) == NULL )
+    {
+        perror("destfp open error");
+        fclose(srcfp);  // 打开目标文件失败，关闭已打开的源文件
+        return -1;
+    }
+
+    //将源文件中的内容复制到目标文件
+    char ch = 0;
+     while((ch = fgetc(srcfp)) != EOF){
+        fputc(ch, destfp);
+    }
+    
+    //关闭两个文件
+    fclose(srcfp);
+    fclose(destfp);
+
+    return 0;
+}
 ```
 
+
+
+#### 2.7	字符串读写:fgets/fputs
+
+```
+	int fputs(const char *s,FILE *stream);
+	功能:将指定的字符串,写入到指定的文件中
+	参数1:要被写入的字符串
+	参数2:文件指针
+	返回值:成功返回本次写入字符的个数,失败返回EOF
+	
+	char *fgets(char *s, int size, FILE *stream)
+	功能:从stream指向的文件中最多读取size-1个字符到s容器中,遇到回车或文件结束,会结束一次读取,并且会将回车放入容器,最后自动加上一个字符串结束标识'\0'
+	参数1:字符数组容器起始地址
+	参数2:要读取的字符个数,最多读取size-1个字符
+	参数3:文件指针
+	返回值:成功返回容器s的起始地址,失败返回NULL
+	
 ```
 
 
-
-#### 2.7
 
 #### 补充知识:
 
