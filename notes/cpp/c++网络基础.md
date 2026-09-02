@@ -902,6 +902,12 @@ int main(int argc, const char *argv[])
 }
 ```
 
+使用fgetch额fputc完成两个文件的拷贝工作,实现指令cp的功能:	cp srcfile destgile
+
+```
+
+```
+
 
 
 #### 2.7
