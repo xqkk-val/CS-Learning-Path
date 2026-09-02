@@ -853,7 +853,53 @@ int main(int argc, const char *argv[])
       功能: 将指定的字符C写入到stream指向的文件中
       参数1: 要写入的字符,对应的无符号整数
       参数2: 文件指针
-      返回值: 成功返回写入字符对应的无符号整数,失败返回EOF并bing'zhi
+      返回值: 成功返回写入字符对应的无符号整数,失败返回EOF并并置位错误码
+```
+
+```cpp
+#include <stdio.h>
+
+int main(int argc, const char *argv[])
+{
+    // 定义头文件指针
+    FILE *fp = NULL;
+    if ((fp = fopen("./file.txt", "w")) == NULL) // 以只写的形式打开一个文件
+    {
+        perror("fopen error");
+        return -1;
+    }
+    // 使用程序对文件对文件进行读写操作(单个字符进行操作)
+    // 本次操作的结果是在外部文件中显示HELP,说明每写入一次,文件光标都会向后偏移
+    fputc('H', fp);
+    fputc('E', fp);
+    fputc('L', fp);
+    fputc('P', fp);
+
+    // 能否从该处读取数据?不可以,为什么?因为光标此时在文件结尾处,没有数据可以被读取
+    // 关闭文件
+    fclose(fp);
+    // 再次以只读的方式打开文件
+    if ((fp = fopen("./file.txt", "r")) == NULL)
+    {
+        perror("fopen error");
+        return -1;
+    }
+
+    char ch = 0; // 将文件中的字符,搬运到终端上
+    while (1)
+    {
+        ch = fgetc(fp); // 从fp指向的文件中光标位置处读取一个字符,并返回
+        if (ch == EOF)
+        {
+            break; // 说明文件已经被全部读取了,可以退出循环
+        }
+        printf("%c",ch);
+    }
+    // 关闭文件
+    fclose(fp);
+
+    return 0;
+}
 ```
 
 
