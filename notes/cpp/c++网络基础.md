@@ -752,10 +752,10 @@ int main(int argc, const char *argv[])
 2>	错误码都是大于或等于0的数字:
 
 ```
-#define EPERM            1      /* Operation not permitted */
-#define ENOENT           2      /* No such file or directory */
-#define ESRCH            3      /* No such process */
-#define EINTR            4      /* Interrupted system call */
+#define EPERM            1      /* Operation not permitted */	操作受限
+#define ENOENT           2      /* No such file or directory */	没有当前文件或目录
+#define ESRCH            3      /* No such process */	没有进程
+#define EINTR            4      /* Interrupted system call */	中断系统调用
 #define EIO              5      /* I/O error */
 #define ENXIO            6      /* No such device or address */
 #define E2BIG            7      /* Argument list too long */
@@ -845,6 +845,15 @@ int main(int argc, const char *argv[])
      功能:从指定文件中读取一个字符数据,并以无符号整数的形式返回
      参数:文件指针
      返回值:成功返回读取的字符对应的无符号整数,失败返回EOF并置位错误码
+     
+     
+      #include <stdio.h>
+      
+      int fputc(int c,FILE *stream)
+      功能: 将指定的字符C写入到stream指向的文件中
+      参数1: 要写入的字符,对应的无符号整数
+      参数2: 文件指针
+      返回值: 成功返回写入字符对应的无符号整数,失败返回EOF并
 ```
 
 
