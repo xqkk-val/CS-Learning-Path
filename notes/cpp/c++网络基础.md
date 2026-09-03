@@ -1027,17 +1027,98 @@ int main(int argc, const char *argv[])
 
 1>缓冲区分为三种
 
-​	行缓存: 和终端文件相关的缓冲区叫做行缓存
+​	行缓存: 和终端文件相关的缓冲区叫做行缓存, 行缓冲区的大小为1024字节，对应的文件指针：stdin、stdout
 
-​	全缓存:
+​	全缓存:和外界文件相关的缓冲区叫做全缓存，全缓冲区的大小为4096字节，对应的文件指针：fp
 
-​	不缓存:和标准出错文件
+​	不缓存:和标准出错相关的缓冲区叫不缓存，不缓存的大小为0字节，对应的文件指针：stderr
+
+```cpp 
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    // 验证行缓存的大小为1024
+    //  如果缓冲区没有被使用时，求出大小为0，只有被至少使用了一次后，缓冲区的大小就被分配了
+    printf("行缓存区的大小: %d\n", stdout->_IO_buf_end - stdout->_IO_buf_base); // 行缓存的大小
+    printf("行缓存区的大小: %d\n", stdout->_IO_buf_end - stdout->_IO_buf_base); // 1024
+
+    printf("行缓存区的大小: %d\n", stdin->_IO_buf_end - stdin->_IO_buf_base);
+    int num = 0;
+    // scanf("%d",&num);            //从终端输入一个整数让如num变量中，类似于cin>>num
+    cin >> num;                                                               // 使用了标准的输入缓冲区
+    printf("行缓存区的大小: %d\n", stdin->_IO_buf_end - stdin->_IO_buf_base); // 1024
+
+    // 验证全缓存的大小为4096
+    FILE *fp = NULL;
+    if ((fp = fopen("./aa.txt", "r")) == NULL)
+    {
+        perror("fopen error");
+        return -1;
+    }
+    // 未使用全缓存时，大小为0
+    printf("全缓存的大小为：%d\n", fp->_IO_buf_end - fp->_IO_buf_base);
+    // 使用一次全缓存
+    fgetc(fp);
+    printf("全缓存的大小为：%d\n", fp->_IO_buf_end - fp->_IO_buf_base);
+
+    // 验证不缓存的大小为0
+    // 未使用不缓存时大小为0
+    printf("不缓存的大小为：%d\n", stderr->_IO_buf_end - stderr->_IO_buf_base);
+    // 使用一次不缓存
+    perror("error");
+    printf("不缓存的大小为：%d\n", stderr->_IO_buf_end - stderr->_IO_buf_base);
+
+    return 0;
+}
+```
+
+2>	缓冲区的刷新时机
+
+行缓存的刷新时机:
+
+```cpp
+/*1、验证缓冲区如果没有达到刷新时机，就不会将数据进行桐新
+printf("hello world");			//在终端上打印输出一个he1oWor1d，没有到缓冲区的刷新时机，就不会输出数据
+while(1);				//阻塞程序不让证程结束
+*/
+
+/*2、当程序结中后，会新行缓州区
+printf("hello world");
+*/
+
+/*3.当遇到换行时：会刷新行缓存
+printf("hello world\n");
+while(1);
+*/
+
+/*4.当输入输出发生切换时,也会刷新行缓存
+int num =0;
+printf("请输入>>>");			//向标准输出缓冲区中写入一组数据，没有换行符号
+scanf("%d", &num);			  //cin >> num
+*/
+
+/*5,当关闭行缓存对应的文件指针时,也会刷新行缓存
+printf("hello world");			//向标准输出缓冲区中写入数据，没有换行
+fclose(stdout);					//关闭标准输出指针
+while(1);
+*/
+
+/*6.使用fflush函数手动刷新缓冲区时,也会刷新行缓存
+printf("hello world");
+fflush(stdout);
+while(1);
+*/
+
+/*7.当缓冲区满了后,会刷新行缓存,行缓存大小:1024字节
+for(int i=0;i<1025;i++)
+{printf("A");}
+while(1);			//防止程序结束
+*/
 
 
-
-
-
-
+```
 
 
 
