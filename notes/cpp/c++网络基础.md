@@ -1023,18 +1023,37 @@ int main(int argc, const char *argv[])
 
 使用fgets额fputs完成两个文件的拷贝工作
 
+#### 2.8 关于标准IO的缓冲区问题
+
+1>缓冲区分为三种
+
+​	行缓存: 和终端文件相关的缓冲区叫做行缓存
+
+​	全缓存:
+
+​	不缓存:和标准出错文件
+
+
+
+
+
+
+
+
+
 #### 补充知识:
 
 关于追代码工具ctags的使用
 
-```
-1.安装ctags: sudo yum install ctags
-2.进入 /usr/include 目录下,执行sudo ctags -R 指令
-3.该目录下会多出一个tags的索引文件
-4.追相关内容的指令:vi -t 内容
-	继续先后追内容:ctrl + ]
-	退出追代码工具: 底行模式下输入q,回车
-```
+> ```
+> 1.安装ctags: sudo yum install ctags
+> 2.进入 /usr/include 目录下,执行sudo ctags -R 指令
+> 3.该目录下会多出一个tags的索引文件
+> 4.追相关内容的指令:vi -t 内容
+> 	继续先后追内容:ctrl + ]
+> 	退出追代码工具: 底行模式下输入q,回车
+> ```
+>
 
 
 
