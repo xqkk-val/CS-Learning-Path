@@ -1120,6 +1120,50 @@ while(1);			//防止程序结束
 
 ```
 
+全缓存的刷新时机:
+
+```cpp
+/*1、当缓冲区刷新时机未到时，就不会刷新全缓冲
+fputs("hello world",fp);		//将字符串写入到文件中
+while(1);				//阻塞程序不让程序结束
+*/
+
+/*2、当程序结中后，会刷新全缓存
+fputs("hello world",fp);
+*/
+
+/*3.当遇到换行时,不会刷新全缓存
+fputs("hello world\n",fp);
+while(1);
+*/
+
+/*4.当输入输出发生切换时,会刷新全缓存
+fputs("hello world",fp);
+fgetc(fp);	
+while(1);
+*/
+
+/*5,当关闭行缓存对应的文件指针时,会刷新全缓存
+fputs("hello",fp)		//向标准输出缓冲区中写入数据，没有换行
+fclose(stdout);					//关闭标准输出指针
+while(1);
+*/
+
+/*6.使用fflush函数手动刷新缓冲区时,也会刷新全缓存
+fputs("hello",fp)
+fflush(stdout);
+while(1);
+*/
+
+/*7.当缓冲区满了后,会刷新行缓存,行缓存大小:1024字节
+for(int i=0;i<409;i++)
+{printf("A");}
+while(1);			//防止程序结束
+*/
+
+
+```
+
 
 
 #### 补充知识:
