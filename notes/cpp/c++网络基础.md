@@ -1156,12 +1156,32 @@ while(1);
 */
 
 /*7.当缓冲区满了后,会刷新行缓存,行缓存大小:1024字节
-for(int i=0;i<409;i++)
+for(int i=0;i<4097;i++)
 {printf("A");}
 while(1);			//防止程序结束
 */
 
 
+```
+
+对于不缓存的刷新时机，只要放入数据，立马进行刷新
+
+2.9	格式化读写: fprintf/fscanf
+
+```
+int fprintf(FILE *stream, const char *format, ...);
+功能:向指定的文件中输出一个格式串
+参数1: 文件指针
+参数2: 格式串,可以包含控制符,%d(整数)%s(字符串)%f(小数)%lf(小数)
+参数3: 可变参数,输出项列表,参数个数由参数2中的格式控制符的个数决定
+返回值: 成功返回输出的字符个数,失败返回一个负数
+
+int fscanf(FILE *stream, const char *format, ...);
+功能:从指定的文件中以指定的格式读取数据,放入程序中
+参数1: 文件指针
+参数2: 格式串,可以包含控制符,%d(整数)%s(字符串)%f(小数)%lf(小数)
+参数3: 可变参数,输出项地址列表,参数个数由参数2中的格式控制符的个数决定
+返回值: 成功返回读入的项数,失败返回EOF并
 ```
 
 
@@ -1179,6 +1199,28 @@ while(1);			//防止程序结束
 > 	退出追代码工具: 底行模式下输入q,回车
 > ```
 >
+
+```
+2>vscode中关于自定义片段的设置
+1、在vscode中使用组合键：ctrl+shift+p调出控制面板
+2、输入user snippets回车
+3、输入自定义片段文件名称，打开自定义文件
+4、输入以下程序
+"simple C++ Program": {
+"prefix": "main",
+"body": [
+"#include<iostream>",
+"using namespace std;"
+"int main(int argc, const char *argv[])",
+"{",
+$1"
+11
+return 0;",
+"}”
+],
+"description": "simple C++ program template"
+子
+```
 
 
 
