@@ -1166,7 +1166,7 @@ while(1);			//防止程序结束
 
 对于不缓存的刷新时机，只要放入数据，立马进行刷新
 
-2.9	格式化读写: fprintf/fscanf
+#### 2.9	格式化读写: fprintf/fscanf
 
 ```
 int fprintf(FILE *stream, const char *format, ...);
@@ -1181,10 +1181,58 @@ int fscanf(FILE *stream, const char *format, ...);
 参数1: 文件指针
 参数2: 格式串,可以包含控制符,%d(整数)%s(字符串)%f(小数)%lf(小数)
 参数3: 可变参数,输出项地址列表,参数个数由参数2中的格式控制符的个数决定
-返回值: 成功返回读入的项数,失败返回EOF并
+返回值: 成功返回读入的项数,失败返回EOF并置位错误码
 ```
 
 
+
+```cpp
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    // 向标准输出文件指针中写入数据
+    fprintf(stdout, "%d %lf %s\n", 520, 3.14, "ISODAJ");
+
+    // 向标准输入中读取数据到程序中
+    int num = 0;
+    fscanf(stdin, "%d", &num); // 从标准输入缓冲区中以%d的格式读取一个整数
+    printf("num = %d\n", num); // 1314
+
+    // 对外部文件进行格式化读写
+    FILE *fp = NULL;
+    if ((fp = fopen("./usr.txt", "w")) == NULL)
+    {
+        perror("fopen error");
+        return -1;
+    }
+
+    // 向文件中写入数据
+    fprintf(fp, "%s %d", "admin", 123456); // 将两个不同的数据存放到文件中
+
+    // 关闭文件
+    fclose(fp);
+
+    if ((fp = fopen("./usr.txt", "w")) == NULL)
+    {
+        perror("fopen error");
+        return -1;
+    }
+    char usrname[20] = "";              // 存放用户名
+    int pwd = 0;                        // 存放密码
+    fscanf(fp, "%s %d", usrname, &pwd); // 从外部文件中分别读取一个字符串和一个整数放入程序中
+    printf("usrname = %s,pwd = %d",usrname,pwd);
+    
+    //
+    fclose(fp);
+
+    return 0;
+}
+```
+
+练习：
+	使用fprintf和fscanf完成注册和登录功能，要求做个小菜单，三个功能，功能1是注册，用户输入账号和密码后，将其存放到外部文件中；功能2是登录，用户输	入登录账号和密码后，如果跟文件中匹配，则提示登陆成功，如果全部不匹配，则提示登录失败；功能0，表示退出。菜单可以循环调用
 
 #### 补充知识:
 
