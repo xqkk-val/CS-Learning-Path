@@ -1395,7 +1395,13 @@ return 0;",
 子
 ```
 
+```
+3>补充一头文件中可以包含多个头文件内容
+```
 
+![image-20260908215143043](c++网络基础.assets/image-20260908215143043.png)
+
+![image-20260908215454281](c++网络基础.assets/image-20260908215454281.png)
 
 ### 三、文件IO
 
@@ -1408,6 +1414,42 @@ return 0;",
 2>在一个进程中.能够打开的文件描述符是有限制的,一般是1024个,[0,1023],可以通过指令ulimit -a进行查看,如果要更改这个限制,可以通过指令ulimit-n数字，进行更改
 
 3>文件描述符的使用原则一般是最小未分配原则,
+
+4>特殊的文件描述符：0、1、2，这三个文件描述符在一个进程启动时就默认被打开了，分别表示标准输入、标准输出、标准错误
+
+``` cpp
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    // 分别输出标准输入、标准输出、标准出错文件指针对应的文件描述符
+    printf("stdin->_fileno = %d\n", stdin->_fileno);  // 0
+    printf("stdout->_fileno =%d\n", stdout->_fileno); // 1
+    printf("stderr->_fileno =%d\n", stderr->_fileno); // 2
+    return 0;
+}
+```
+
+#### 3.2	打开文件open
+
+```
+	#include <fcntl.h>
+	int open(const char *pathname, int flags);
+	int open(const char *pathname, int flags, mode_t mode);
+	功能：打开或创建一个文件，并返回该文件的文件描述符，返回文件描述符的规则是最小未分配原则
+	参数1：要打开的文件文件路径
+	参数2：打开模式
+		以下三种方式必须选其一：O_RDONLY(只读)、O_WRONLY（只写）、O_RDWR（读写）
+		以下的打开方式可以有零个或多个，跟上述的方式一起用位或运算连接到一起
+		O_CREAT：用于创建文件，如果文件不存在，则创建文件，如果文件存在，则打开文件，如果f1ag中包含了该模式，则函数的第三个参数必须要加上
+		O_APPEND：以追加的形式打开文件，光标定位在结尾
+		O_TRUNC：清空文件
+		O_EXCL：常跟O_CREAT一起使用，确保本次要创建一个新文件，如果文件已经存在，则open函数报错
+		eg
+```
+
+
 
 ## 第三章:	多进程编程
 
