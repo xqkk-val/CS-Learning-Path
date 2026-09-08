@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "system/日记/2026-09-08.md",
+                "file": "notes/cpp/c++网络基础.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-09-08"
-            }
-          },
-          {
-            "id": "aa918c5c8e8c6adf",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://obsidian.md/auth#signup",
-                "title": "data:text/plain,",
-                "mode": "blank"
-              },
-              "icon": "globe-2",
-              "title": "data:text/plain,"
+              "title": "c++网络基础"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -95,8 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "4b401c476fca1758",
@@ -225,15 +209,15 @@
       "zk-prefixer:创建时间戳笔记": false
     }
   },
-  "active": "aa918c5c8e8c6adf",
+  "active": "3cf07c153f5d6988",
   "lastOpenFiles": [
+    "操作系统/未命名.canvas",
     "system/日记/2026-09-08.md",
     "未命名.canvas",
     "notes/cpp/c++网络基础.md",
     "notes/CMake/CMake实战/CMake实战.md",
     "notes/CMake/CMake.md",
     "notes/未命名.canvas",
-    "操作系统/未命名.canvas",
     "notes/cpp/c++网络基础.assets/image-20260901170250257.png",
     "notes/cpp/c++网络基础.assets/image-20260901164212033.png",
     "notes/cpp/c++网络基础.assets/image-20260802193045449.png",
