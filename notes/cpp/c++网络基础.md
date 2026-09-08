@@ -1232,7 +1232,97 @@ int main(int argc, const char *argv[])
 ```
 
 练习：
-	使用fprintf和fscanf完成注册和登录功能，要求做个小菜单，三个功能，功能1是注册，用户输入账号和密码后，将其存放到外部文件中；功能2是登录，用户输	入登录账号和密码后，如果跟文件中匹配，则提示登陆成功，如果全部不匹配，则提示登录失败；功能0，表示退出。菜单可以循环调用
+	使用fprintf和fscanf完成注册和登录功能，要求做个小菜单，三个功能，
+
+功能1是注册，用户输入账号和密码后，将其存放到外部文件中；
+
+功能2是登录，用户输入登录账号和密码后，如果跟文件中匹配，则提示登陆成功，如果全部不匹配，则提示登录失败；
+
+功能3表示退出。菜单可以循环调用
+
+#### 2.10	格式串转字符串存入字符数组中: sprintf/snprintf
+
+1>printf是向终端打印一个字符串,fprintf是向外部文件打印一个字符串
+
+2>想要将多个不同数据类型的数据,组成一个
+
+```
+		int sprintf(char *restrict str,const char *restrict format, ...);
+		功能: 将指定的格式串转换为字符串,放入字符数组中
+		参数1:字符数组的起始地址
+		参数2:格式串,可以包含多个格式控制符
+		参数3:可变参数
+		返回值: 成功返回转换的字符个数,失败返回EOF
+		
+		对于上述函数而言,用一个小的容器去存储一个大的转换后的字符串时,会出现指针越界的错误,为了安全起见,引入了snprintf
+		
+		int snprintf(char str[restrict .size], size_t size,const char *restrict format, ...);
+		功能: 将格式串中最毒size-1个字符串转换为字符串,存放到转换数组中
+		参数1:字符数组的起始地址
+		参数2:要转换的字符个数,最多为size-1
+		参数3:格式串,可以包含多个格式控制符
+		参数4:可变参数
+		返回值:如果转换的字符小于size时,返回值就是成功转换字符的个数,如果大于size则只转换size-1个字符,返回值就是size,失败返回EOF
+		
+```
+
+```cpp
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    char buf[128]; // 定义一个字符串容器
+
+    // 将多种数据类型的数据连接成一个字符串,放入字符数组中
+    // sprintf(buf, "%d %s %lf", 100, "xqkk", 99.5);
+
+    // 安全起见,我们使用snprintf
+    snprintf(buf, sizeof(buf), "%d %s %lf", 100, "xqkk", 99.5);
+    // 输出转换后的字符串
+    printf("%s", buf);
+    return 0;
+}
+```
+
+#### 2.11	模块化读写	(fread/fwrite)
+
+```
+		size_t fread(void ptr[restrict .size * .nmemb],size_t size,size_t nmemb,FILE *restrict stream);
+		功能:从stream指向的文件中,读取nmemb项数据,每一项的大小为size,将整个结果放入ptr指向的容器中
+		参数1:容器指针,是一个void*类型,表示可以存储任意类型的数据;
+		参数2:要读取数据每一项的大小
+		参数3要读取数据的项数
+		参数4:文件指针
+		返回值:成功返回nmemb,就是成功读取的项数,失败返回小于项数的值,或者是0
+		size_t fwrite(const void ptr[restrict .size * .nmemb],size_t size, size_t nmemb,FILE *restrict stream);
+		功能:从stream指向的文件中,写入nmemb项数据,每一项的大小为size,数据的起始地址是ptr
+		参数1:要写入数据的起始地址
+		参数2:每一项的大小
+		参数3:要写入的总项数
+		参数4:文件指针
+		返回值:成功返回写入的项数,失败返回小于项数的值,或者是0
+```
+
+1>字符串的读写
+
+```
+
+```
+
+2>整数的读写
+
+```
+
+```
+
+3>结构体的读写
+
+```
+
+```
+
+
 
 #### 补充知识:
 
