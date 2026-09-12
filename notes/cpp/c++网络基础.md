@@ -1475,7 +1475,7 @@ int main(int argc, const char *argv[])
 		返回值：成功返回0，失败返回-1作置位错误码
 ```
 
-#### 3.4	读写操作: read.write
+#### 3.4	读写操作: read / write
 
 ```
 
