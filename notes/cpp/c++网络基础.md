@@ -1478,7 +1478,15 @@ int main(int argc, const char *argv[])
 #### 3.4	读写操作: read / write
 
 ```
-
+		#include <unistd.h>
+		
+		ssize_t read(int fd, void buf[.count], size_t count);
+		功能:从fd文件描述符引用的文件中读取count个字符放入buf对应的容器中
+		参数1:已经打开文件对应的文件描述符
+		参数2:容器的起始地址
+		参数3:要读取的字符个数
+		返回值
+		功能: 向指定文件描述符引用的文件中将buf中的count个字符写入
 ```
 
 
