@@ -1396,7 +1396,7 @@ return 0;",
 ```
 
 ```
-3>补充一头文件中可以包含多个头文件内容
+3>补充___头文件中可以包含多个头文件内容
 ```
 
 ![image-20260908215143043](c++网络基础.assets/image-20260908215143043.png)
@@ -1477,7 +1477,7 @@ int main(int argc, const char *argv[])
 
 #### 3.4	读写操作: read / write
 
-```
+```c++
 		#include <unistd.h>
 		
 		ssize_t read(int fd, void buf[.count], size_t count);
@@ -1495,6 +1495,82 @@ int main(int argc, const char *argv[])
 		参数2：要写入的数据的起始地址
 		参数3：要写入数据的个数
 		返回值：成功返回写入的字符个数，这个个数可能小于count,失败返回-1并置位错误码
+```
+
+```c++
+#include <myhead.h>
+
+int main(int argc, const char *argv[])
+{
+    // 1、定义文件描述符，对于文件IO而言，句柄就是文件描述符
+    int fd = -1;
+
+    // 以只写的形式创建文件，如果文件不存在则创建文件
+    // 如果创建文件时没有给权限，则该文件的权限是随机权限
+    // 如果创建文件时，给定了文件的权限，则文件最终的权限是给定的 mode & ~umask
+    if ((fd = open("./tt.txt", O_WRONLY | O_CREAT, 0644)) == -1)
+    {
+        perror("open error");
+        return -1;
+    }
+
+    printf("open success fd = %d\n", fd);
+    // 3，由于0、1、2已经被使用，所以该数为3
+
+    // 对数据进行读写操作
+    char wbuf[128] = "hello world";
+
+    // 将上述字符串写入文件中
+    write(fd, wbuf, strlen(wbuf));
+
+    // 关闭文件
+    close(fd);
+    // 关闭 fd 引用的文件
+
+    // 再次以只读的形式打开文件，此时参数2中不需要使用 O_CREAT，那么第三个参数也不需要了
+    if ((fd = open("./tt.txt", O_RDONLY)) == -1)
+    {
+        perror("open error");
+        return -1;
+    }
+
+    printf("open success fd = %d\n", fd);
+    // 3
+
+    // 定义接收数据容器
+    char rbuf[128] = "";
+    int res = read(fd, rbuf, sizeof(rbuf));
+    // 从文件中读取数据放入 rbuf 中
+
+    write(1, rbuf, res);
+    // 向1号文件描述符中写入数据，之前读取多少，现在写入多少
+
+    // 关闭文件
+    close(fd);
+
+    return 0;
+}
+```
+
+#### 3.5	关于光标的操作: lseek
+
+```c++
+	#include <unistd.h>
+
+    off_t lseek(int fd, off_t offset, int whence);
+	功能：移动光标的位置，并返回光标现在所在的位置
+	参数1：文件描述符
+	参数2：偏移量
+    	>0:表示从指定位置向后偏移n个字节
+		<0:表示从指定位置向前偏移n个字节
+		=0:在指定位置处不偏移
+	参数3:偏移的起始位置
+		SEEK_SET:文件起始位置
+		SEEK_CUR:文件指针当前位置
+		SEEK_END:文件结束位置
+    返回值：光标现在所在的位置
+        
+    粗略记忆:fseek+ftell
 ```
 
 
