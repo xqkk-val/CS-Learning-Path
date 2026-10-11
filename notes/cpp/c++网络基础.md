@@ -1573,6 +1573,14 @@ int main(int argc, const char *argv[])
     粗略记忆:fseek+ftell
 ```
 
+练习：将一个bmp格式的图片信息读取出来，并将该图片的相关内容（颜色）进行更改
+
+如何将windows下的文件，赋值到linux系统的Centos下
+
+```
+
+```
+
 
 
 ## 第三章:	多进程编程
