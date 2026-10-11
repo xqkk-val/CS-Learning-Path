@@ -1578,7 +1578,10 @@ int main(int argc, const char *argv[])
 如何将windows下的文件，赋值到linux系统的Centos下
 
 ```
-
+1、在windows下调出cmd窗口
+2、输入指令：
+	scp 要拷贝的文件路径 1inux下的用户名@ip地址:linux下存放的地址路径
+	eg:scp C:\Users\Admin\Desktop\0101.bmp xq@192.168.16.129:/home/xq/day1/IO/day2
 ```
 
 
