@@ -1625,11 +1625,11 @@ int main(int argc, const char *argv[])
 
 使用文件IO来完成两个文件的拷贝,可以完成两个图像的拷贝工作
 
-## 第三章:	多进程编程
+## 三	多进程编程
 
 #进程#多进程
 
-### 一.多进程理论基础
+### 一、多进程理论基础
 
 #### 1.1	目的
 
@@ -1856,7 +1856,16 @@ MiB Swap:   2108.0 total,   1912.2 free,    195.8 used.    402.7 avail Mem
 1.一共可以发送62个信号,前32个是稳定信号,后面是不稳定信号
 2.常用的信号
 SIGHUP:	当进程所在的终端被关闭后,终端会给运行在当前终端的每个进程放送该信号,默认结束进程
-SIGINT:	
+SIGINT：中断信号，当用户键入Ctrl+c时发射出来
+SIGQUIT：退出信号，当用户键入ctrl+/是发送，退出进程
+SIGKILL：杀死指定的进程
+SIGSEGV：当指针出现越界访问时，会发射，表示段错误
+SIGPIPE：当管道破裂时会发送该信号
+SIGALRM：当定时器超时后，会发送该信号
+SIGSTOP：暂停进程，当用户键入ctrl+z时发射
+SIGTSTP：也是暂停进程
+SIGTSTP、SIGUSR2：留给用户自定义的信号，没有默认操作
+3、有两个特殊信号：SIGKILL和SIGSTOP，这两个信号既不能被捕获，也不能被忽略
 ```
 
 ![image-20260802193045449](c++网络基础.assets/image-20260802193045449.png)
@@ -1873,18 +1882,23 @@ SIGINT:
 
 ```
 进程的主组状态:	
-				D    uninterruptible sleep (usually IO)		不可中断的休眠态,通常是IO操作
+				D    uninterruptible sleep (usually IO)				不可中断的休眠态,通常是IO操作
                 I    Idle kernel thread
-                R    running or runnable (on run queue)
-                S    interruptible sleep (waiting for an event to complete)
-                T    stopped by job control signal
-                t    stopped by debugger during the tracing
-                W    paging (not valid since the 2.6.xx kernel)
-                X    dead (should never be seen)
-                Z    defunct ("zombie") process, terminated but not reaped by its parent
+                R    running or runnable (on run queue)				运行态
+                S    interruptible sleep (waiting for an event to complete)		可中断的休眠态
+                T    stopped by job control signal					停止态
+                t    stopped by debugger during the tracing			调试时的停止态
+                W    paging (not valid since the 2.6.xx kernel)		已经弃用的状态
+                X    dead (should never be seen)					死亡态
+                Z    defunct ("zombie") process, terminated but not reaped by its parent	僵尸态
 
 附加态:
-
+			   <    high-priority (not nice to other users)			高优先级进程
+               N    low-priority (nice to other users)				低优先级进程
+               L    has pages locked into memory (for real-time and custom IO)	锁在内存中的进程
+               s    is a session leader								会话组组长
+               l    is multi-threaded (using CLONE_THREAD, like NPTL pthreads do)	包含多线程的进程
+               +    is in the foreground process group				前台运行的进程
 ```
 
 
@@ -1892,16 +1906,22 @@ SIGINT:
 2>	状态切换实例
 
 ```
-jobs -l	查看所有已停止进程的作业号
+1、如果有停止的进程，可以在终端输入指令：jobs -l 查看停止进程的作业号
+2、通过使用指令：bg 作业号 			 	实现将停止的进程进入后台运行状态，如果只有一个停止的进程，输入bg不加作业号也可以
+3、对后台运行的进程，输入fg 作业号 	  	  实现将后台运行的进程切换到前台运行
+4.、直接将可执行程序后台运行：./可执行程序 &
 ```
 
+![image-20261012220238909](c++网络基础.assets/image-20261012220238909.png)3>	进程主要状态的转换（五态图）
 
-
-
-
-
+![image-20261012221010798](c++网络基础.assets/image-20261012221010798.png)
 
 ### 二.	多进程实现
+
+------
+
+进程的创建过程，是子进程通过拷贝父进程得到的，新进程的创建直接拷贝父进程的资源，只需改变很少部分的数据即可，保留了父
+进程的大部分的数据信息（遗传基因），所以这个拷贝过程，系统通过一个函数fork来自动完成
 
 ### 3.3 进程间通信IPC
 

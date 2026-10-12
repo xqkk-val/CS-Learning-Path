@@ -55,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#PPID",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -76,7 +76,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -166,7 +167,7 @@
               "state": {
                 "file": "notes/cpp/c++网络基础.md",
                 "followCursor": false,
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
@@ -210,8 +211,10 @@
       "zk-prefixer:创建时间戳笔记": false
     }
   },
-  "active": "a54bfcc8af822184",
+  "active": "3cf07c153f5d6988",
   "lastOpenFiles": [
+    "notes/cpp/c++网络基础.assets/image-20261012221010798.png",
+    "notes/cpp/c++网络基础.assets/image-20261012220238909.png",
     "notes/cpp/c++网络基础.assets/image-20260908221349449.png",
     "notes/cpp/c++网络基础.assets/image-20260908215454281.png",
     "notes/cpp/c++网络基础.assets/image-20260908215143043.png",
@@ -245,8 +248,6 @@
     "system/assets/c++网络基础.assets/image-20260606132345344.png",
     "system/assets/c++网络基础.assets/image-20260609000337814.png",
     "system/assets/c++网络基础.assets/image-20260608231631411.png",
-    "system/assets/c++网络基础.assets/image-20260606133017665.png",
-    "system/assets/c++网络基础.assets/image-20260608225032949.png",
     "system/日记/2026-05-29.md",
     "notes/CMake/CMake基础知识/CMake指令.md",
     "notes/CMake/CMake实战/demo2.md",
