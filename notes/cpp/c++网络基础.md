@@ -1514,18 +1514,14 @@ int main(int argc, const char *argv[])
         return -1;
     }
 
-    printf("open success fd = %d\n", fd);
-    // 3，由于0、1、2已经被使用，所以该数为3
+	printf("open success fd = %d\n", fd);    // 3，由于0、1、2已经被使用，所以该数为3
 
     // 对数据进行读写操作
-    char wbuf[128] = "hello world";
-
-    // 将上述字符串写入文件中
+    char wbuf[128] = "hello world";     // 将上述字符串写入文件中
     write(fd, wbuf, strlen(wbuf));
 
     // 关闭文件
-    close(fd);
-    // 关闭 fd 引用的文件
+    close(fd);     // 关闭 fd 引用的文件
 
     // 再次以只读的形式打开文件，此时参数2中不需要使用 O_CREAT，那么第三个参数也不需要了
     if ((fd = open("./tt.txt", O_RDONLY)) == -1)
@@ -1554,7 +1550,7 @@ int main(int argc, const char *argv[])
 
 #### 3.5	关于光标的操作: lseek
 
-```c++
+```cpp
 	#include <unistd.h>
 
     off_t lseek(int fd, off_t offset, int whence);
@@ -1573,7 +1569,7 @@ int main(int argc, const char *argv[])
     粗略记忆:fseek+ftell
 ```
 
-练习：将一个bmp格式的图片信息读取出来，并将该图片的相关内容（颜色）进行更改
+##### 练习：将一个bmp格式的图片信息读取出来，并将该图片的相关内容（颜色）进行更改
 
 如何将windows下的文件，赋值到linux系统的Centos下
 
@@ -1584,7 +1580,50 @@ int main(int argc, const char *argv[])
 	eg:scp C:\Users\Admin\Desktop\0101.bmp xq@192.168.16.129:/home/xq/day1/IO/day2
 ```
 
+```cpp
+#include <myhead.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    // 以读写的形式大开文件
+    int fd = -1;
+    if ((fd = open("./0101.bmp", O_RDWR)) == -1)
+    {
+        perror("open error");
+        return -1;
+    }
+    // 1,822,720
+    //  获取文件的大小
+    printf("文件的大小为:%ld\n", lseek(fd, 0, SEEK_END));
 
+    // 定义变量储存文件大小
+    int pic_size = 0;
+    lseek(fd, 2, SEEK_SET); // 将文件从起始位置向后偏移两个字节,跳过文件类型
+    read(fd, &pic_size, 4); // 将文件头的3-6字节的内容读取出来
+    printf("pic_size = %d\n", pic_size);
+    // 将文件光标向后偏移54字节，跳过文件头和信息头
+    lseek(fd, 54, SEEK_SET);
+    // 定义一像素的颜色：颜色规律是蓝绿红
+    unsigned char color[3] = {0, 255, 0};
+    // 定义一个绿色
+    for (int i = 0; i < 100; i++)
+    {
+        // 以像素为单位遍历行数，遍历前100行
+        for (int j = 0; j < 658; j++)
+        {
+            // 遍历所有列数
+            // 此时的（i，j）定位的就是一个像素点，是一个三字节为单位的颜色点
+            write(fd, color, sizeof(color));
+        }
+    }
+
+    // 关闭文件
+    close(fd);
+    return 0;
+}
+```
+
+使用文件IO来完成两个文件的拷贝,可以完成两个图像的拷贝工作
 
 ## 第三章:	多进程编程
 
