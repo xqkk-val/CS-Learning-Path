@@ -1872,14 +1872,22 @@ SIGINT:
 1>	可以通过man ps进行查看进程的状态
 
 ```
-进程的主组状态:
-
+进程的主组状态:	
+				D    uninterruptible sleep (usually IO)		不可中断的休眠态,通常是IO操作
+                I    Idle kernel thread
+                R    running or runnable (on run queue)
+                S    interruptible sleep (waiting for an event to complete)
+                T    stopped by job control signal
+                t    stopped by debugger during the tracing
+                W    paging (not valid since the 2.6.xx kernel)
+                X    dead (should never be seen)
+                Z    defunct ("zombie") process, terminated but not reaped by its parent
 
 附加态:
 
 ```
 
-![image-20260807215618047](c++网络基础.assets/image-20260807215618047.png)
+
 
 2>	状态切换实例
 
