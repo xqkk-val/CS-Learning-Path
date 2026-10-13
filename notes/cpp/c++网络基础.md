@@ -2044,9 +2044,7 @@ int main(int argc, const char *argv[])
 
 
 
-#### 2.2
-
-
+#### 2.2父子进程号的获取：getpid、getppid
 
 ```
 		#include <unistd.h>
@@ -2163,7 +2161,9 @@ int main(int argc, const char *argv[])
         // 输出当前进程号、子进程号、父进程号
         printf("self pid=%d, child pid = %d, parent pid = %d\n", getpid(), pid, getppid());
         sleep(8);
-        wait(NULL);
+        //wait(NULL);		//回收子进程资源,只有回收了子进程资源后,父进程才继续先后执行
+        waitpid(-1,NULL,WNOHANG);
+        printf("子进程资源已回收\n");
     }
     else if (pid == 0)
     {
@@ -2174,23 +2174,22 @@ int main(int argc, const char *argv[])
         wait(NULL);
 
 
-        exit(EXIT_SUCCESS);
-    }
+        exit (EXIT_SUCCESS);			//刷新缓冲区并退出进程
+		//_exit(EXIT_SUCCESS)；		//不刷新缓冲区退出进程
     else
     {
         perror("fork error");
         return -1;
     }
-    while (1)
-        ;
+    while (1);			
     return 0;
 }
 
 ```
 
+![image-20261013184049193](c++网络基础.assets/image-20261013184049193.png)
 
-
-
+#### 练习：使用多进程完成两个文件的拷贝工作，父进程拷贝前一半内容，子进程拷贝后一半内容，父进程要回收子进程的资源
 
 
 
