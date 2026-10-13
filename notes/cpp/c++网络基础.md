@@ -1956,23 +1956,159 @@ int main(int argc, const char *argv[])
 
 2>	多个fork创建进程
 
+![image-20261013174922566](c++网络基础.assets/image-20261013174922566.png)
+
+![image-20261013174930658](c++网络基础.assets/image-20261013174930658.png)
+
+3>返回值案列
+
+```
+#include <myhead.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    pid_t pid = -1;
+
+    pid = fork(); // 创建一个子进程，父进程会将返回值赋值给父进程中的pid变量
+                  // 子进程会将返回值赋值给子进程中的pid变量
+
+    printf("pid=%d\n", pid); // 对于父进程而言会得到大于的数字，对于子进程而言会得到0
+
+    if (pid > 0)
+    {
+        // 父进程代码
+
+        printf("我是父进1111\n");
+    }
+    else if (pid == 0)
+    {
+        // 子进程代码
+
+        printf("我是子进程\n");
+        sleep(1);
+    }
+    else
+    {
+        perror("fork error");
+        return -1;
+    }
+    while (1)
+        ;
+    return 0;
+}
+```
+
+![image-20261013175042836](c++网络基础.assets/image-20261013175042836.png)
+
+4>父子进程并发执行的案例
+
+```
+#include <myhead.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    pid_t pid = -1;
+
+    pid = fork(); // 创建一个子进程，父进程会将返回值赋值给父进程中的pid变量
+                  // 子进程会将返回值赋值给子进程中的pid变量
+
+    printf("pid=%d\n", pid); // 对于父进程而言会得到大于的数字，对于子进程而言会得到0
+
+    if (pid > 0)
+    {
+        // 父进程代码
+        while (1)
+        {
+            printf("我是父进1111\n");
+            sleep(1);
+        }
+    }
+    else if (pid == 0)
+    {
+        // 子进程代码
+        while (1)
+        {
+            printf("我是子进程\n");
+            sleep(1);
+        }
+    }
+    else
+    {
+        perror("fork error");
+        return -1;
+    }
+
+    return 0;
+}
+```
 
 
 
+#### 2.2
 
 
 
+```
+		#include <unistd.h>
+
+        pid_t getpid(void);
+        功能：获取当前进程的进程号
+		参数：无
+		返回值：当前进程的进程号
+        pid_t getppid(void);
+        功能：获取当前进程的父进程pid号
+		参数：无
+		返回值：当前进程的父进程pid
+```
+
+```
+#include <myhead.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    pid_t pid = -1;
+    pid = fork();
+    if (pid > 0)
+    {
+        // 父进程程序代码
+        // 输出当前进程号、子进程号、父进程号
+        printf("self pid=%d, child pid = %d, parent pid = %d\n", getpid(), pid, getppid());
+    }
+    else if (pid == 0)
+    {
+        // 子进程程序代码
+        // 输出当前进程号、父进程号
+        printf("self pid = %d,parent pid = %d\n", getpid(), getppid());
+    }
+    else
+    {
+        perror("fork error");
+        return -1;
+    }
+    while (1)
+        ;
+    return 0;
+}
+
+```
 
 
 
+#### 2.3	进程退出：exit/_exit
 
+上述两个函数都可以完成进程的退出，区别是在退出进程时，是否刷新标准IO的缓冲区
 
+exit属于库函数，使用该函数退出进程时，会刷新标准IO的缓冲区后退出
+		_exit属于系统调用（内核提供的函数），使用该函数退出进程时，不会刷新标准IO的缓冲区
 
-
-
-
-
-
+```
+		include <stdlib.h>
+        void exit(int status);
+功能：退出当前进程，并刷新当前进程打开的标准IO的缓冲区
+参数：进程退出时的状态，会将改制与0377进行位与运算后，返回给回收资源的进程
+		include <unistd.h>
+		void _exit(int status);
+```
 
 
 
