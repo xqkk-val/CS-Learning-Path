@@ -2102,23 +2102,91 @@ exit属于库函数，使用该函数退出进程时，会刷新标准IO的缓�
 		_exit属于系统调用（内核提供的函数），使用该函数退出进程时，不会刷新标准IO的缓冲区
 
 ```
-		include <stdlib.h>
+		#include <stdlib.h>
+		
         void exit(int status);
-功能：退出当前进程，并刷新当前进程打开的标准IO的缓冲区
-参数：进程退出时的状态，会将改制与0377进行位与运算后，返回给回收资源的进程
-		include <unistd.h>
+		功能：退出当前进程，并刷新当前进程打开的标准IO的缓冲区
+		参数：进程退出时的状态，会将改制与0377进行位与运算后，返回给回收资源的进程
+		返回值：无
+		
+		#include <unistd.h>
+		
 		void _exit(int status);
+		功能：退出当前进程，不刷新当前进程打开的标准IO的缓冲区
+		参数：进程退出时的状态，会将改制与0377进行位与运算后，返回给回收资源的进程
+		返回值：无
 ```
 
 
 
+#### 2.4进程资源回收：wait、waitpid
+
+有两个函数可以完成对进程资源的回收
+		wait是阻塞回收任意一个子进程的资源函数
+		waitpid：可以阻塞，也可以非阻塞完成对指定的进程号进程资源回收
+
+```
+ #include <sys/wait.h>
+
+       pid_t wait(int *_Nullable wstatus);
+	    功能：阻塞回收子进程的资源
+	    参数：接收子进程退出时的状态，获取子进程退出时的状态与0377进行位与后的结果，如果不愿意接收，可以填NUL
+		返回值：成功返回回收资源的那个进程的pid号，失败返回-1并置位错误码
+		
+       pid_t waitpid(pid_t pid, int *_Nullable wstatus, int options);
+		功能：可以阻塞也可以非阻塞回收指定进程的资源
+参数1：进程号
+		>0：表示回收指定的进程，进程号位pid（常用）
+		=0：表示回收当前进程所在进程组中的任意一个子进程
+		=-1：表示回收任意一个子进程（常用）
+		<-1:表示回收指定进程组中的任意一个子进程，进程组id为给定的pid的绝对值      
+参数2：接收子进程退出时的状态，获取子进程退出时的状态与0377进行位与后的结果，如果不愿意接收，可以填NULL
+参数3：是否阻塞
+		0：表示阻塞等待			：waitpid(-1，&status，0);等价于wait(&status)
+		WNOHANG：表示非阻塞
+返回值：
+		>0：返回的是成功回收的子进程pid号
+		=0：表示本次没有回收到子进程
+		=-1：出错并置位错误码
+```
+
+```c++
+#include <myhead.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    pid_t pid = -1;
+    pid = fork();
+    if (pid > 0)
+    {
+        // 父进程程序代码
+        // 输出当前进程号、子进程号、父进程号
+        printf("self pid=%d, child pid = %d, parent pid = %d\n", getpid(), pid, getppid());
+        sleep(8);
+        wait(NULL);
+    }
+    else if (pid == 0)
+    {
+        // 子进程程序代码
+        // 输出当前进程号、父进程号
+        printf("self pid = %d,parent pid = %d\n", getpid(), getppid());
+        sleep(3);
+        wait(NULL);
 
 
+        exit(EXIT_SUCCESS);
+    }
+    else
+    {
+        perror("fork error");
+        return -1;
+    }
+    while (1)
+        ;
+    return 0;
+}
 
-
-
-
-
+```
 
 
 
