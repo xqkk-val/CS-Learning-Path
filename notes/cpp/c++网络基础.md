@@ -902,7 +902,7 @@ int main(int argc, const char *argv[])
 }
 ```
 
-使用fgetch额fputc完成两个文件的拷贝工作,实现指令cp的功能:	cp srcfile destgile
+#### 使用fgetch额fputc完成两个文件的拷贝工作,实现指令cp的功能:	cp srcfile destgile
 
 ```cpp
 #include <stdio.h>
@@ -1021,7 +1021,7 @@ int main(int argc, const char *argv[])
 }
 ```
 
-使用fgets额fputs完成两个文件的拷贝工作
+#### 使用fgets额fputs完成两个文件的拷贝工作
 
 #### 2.8 关于标准IO的缓冲区问题
 
@@ -1231,8 +1231,7 @@ int main(int argc, const char *argv[])
 }
 ```
 
-练习：
-	使用fprintf和fscanf完成注册和登录功能，要求做个小菜单，三个功能，
+#### 练习：使用fprintf和fscanf完成注册和登录功能，要求做个小菜单，三个功能，
 
 功能1是注册，用户输入账号和密码后，将其存放到外部文件中；
 
@@ -1569,7 +1568,7 @@ int main(int argc, const char *argv[])
     粗略记忆:fseek+ftell
 ```
 
-##### 练习：将一个bmp格式的图片信息读取出来，并将该图片的相关内容（颜色）进行更改
+#### 练习：将一个bmp格式的图片信息读取出来，并将该图片的相关内容（颜色）进行更改
 
 如何将windows下的文件，赋值到linux系统的Centos下
 
@@ -1623,7 +1622,7 @@ int main(int argc, const char *argv[])
 }
 ```
 
-使用文件IO来完成两个文件的拷贝,可以完成两个图像的拷贝工作
+#### 使用文件IO来完成两个文件的拷贝,可以完成两个图像的拷贝工作
 
 ## 三	多进程编程
 
