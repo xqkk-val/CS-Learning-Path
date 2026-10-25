@@ -2190,7 +2190,241 @@ int main(int argc, const char *argv[])
 
 #### 练习：使用多进程完成两个文件的拷贝工作，父进程拷贝前一半内容，子进程拷贝后一半内容，父进程要回收子进程的资源
 
+```c++
+#include <myhead.h>
+#include <sys/wait.h>
+#include <cstdlib>
+using namespace std;
+// 定义求文件大小的函数
+int get_file_size(const char *srcfile, const char *destfile)
+{
+    // 以只读的形式打开源文件,以创建写的形式打开目标文件
+    int srcfd, destfd; // 记录源文件和目标文件的文件描述符
+    if ((srcfd = open(srcfile, O_RDONLY)) == -1)
+    {
+        perror("open srcfile errpr");
+        return -1;
+    }
+    if ((destfd = open(destfile, O_WRONLY | O_CREAT | O_TRUNC)) == -1)
+    {
+        perror("open destfile error");
+        return -1;
+    }
 
+    // 求原文件的大小
+    int len = lseek(srcfd, 0, SEEK_END);
+
+    // 关闭文件
+    close(srcfd);
+    close(destfd);
+
+    return len; // 将源文件大小返回
+}
+
+// 定义拷贝函数
+int copy_file(const char *srcfile, const char *destfile, int start, int len)
+{
+    // 以只读形式打开源文件,以只写的形式打开源文件
+    int srcfd, destfd; // 记录源文件和目标文件的文件描述符
+    if ((srcfd = open(srcfile, O_RDONLY)) == -1)
+    {
+        perror("open srcfile errpr");
+        return -1;
+    }
+    if ((destfd = open(destfile, O_WRONLY | O_CREAT)) == -1)
+    {
+        perror("open destfile error");
+        return -1;
+    }
+
+    // 将两个文件的光标位置统一
+    lseek(srcfd, start, SEEK_SET);
+    lseek(destfd, start, SEEK_SET);
+
+    // 开始拷贝
+    char buf[128] = ""; // 中间量
+    int sum = 0;
+    while (1)
+    {
+        int res = read(srcfd, buf, sizeof(buf)); // 从源文件中读取数据
+        sum += res;
+        if (res == 0 || sum >= res)
+        {
+            write(destfd, buf, res - (sum - len));
+            break; // 结束
+        }
+        write(destfd, buf, res); // 从源文件读多少，写入目标文件多少
+    }
+
+    // 关闭文件
+    close(srcfd);
+    close(destfd);
+    return sum;
+}
+
+/************************** */
+int main(int argc, const char *argv[])
+{
+    if (argc != 3)
+    {
+        printf("input file error\n");
+        printf("usage:./a.out srcfile destfile\n");
+        return -1;
+    }
+    // 获取目标文件的长度,并且创建目标文件
+    int len = get_file_size(argv[1], argv[2]);
+
+    pid_t pid = fork();
+    if (pid > 0)
+    {
+        copy_file(argv[1], argv[2], 0, len / 2); // 从开头位置拷贝,拷贝len/2内容
+
+        // 回收子进程资源
+        wait(NULL);
+    }
+    else if (pid == 0)
+    {
+        copy_file(argv[1], argv[2], len / 2, len - len / 2);
+
+        exit(EXIT_SUCCESS);
+    }
+    else
+    {
+        perror("error");
+    }
+
+    return 0;
+}
+
+```
+
+
+
+#### 2.5 父进程创建奇数个进程并为其收尸
+
+```cpp
+#include <myhead.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    pid_t pid = fork(); // 创建大儿子
+    if (pid > 0)
+    {
+        // 父进程
+        pid_t pid_2 = fork(); // 例建二儿子
+        if (pid_2 > 0)
+        {
+            // 父进程
+            printf("我是父进程\n");
+            // 回收两个子进程的资源
+            wait(NULL);
+            wait(NULL);
+        }
+        else if (pid_2 == 0)
+        {
+            sleep(3);
+            // 二儿子进程内容
+            printf("我是进程2\n");
+            exit(EXIT_SUCCESS);
+        }
+    }
+    else if (pid == 0)
+    {
+        sleep(3)
+            // 大儿子进程
+            printf("我是进程1\n");
+        exit(EXIT_SUCCESS);
+    }
+    else
+    {
+        perror("fork error");
+        return -1;
+    }
+
+    return 0;
+}
+```
+
+#### 2.6僵尸进程与孤儿进程
+
+1>	孤儿进程:当前进程还正在运行,其父进程已经退出了.
+
+​				说明:	每个进程退出后,其分配的系统资源应该由其父进程进行回收,否则会造成资源的浪费
+
+```CPP
+#include <myhead.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    pid_t pid = -1;
+    pid = fork();
+    if (pid > 0)
+    {
+        // 父进程程序代码
+        sleep(5);
+        exit(EXIT_SUCCESS); // 父进程退出
+    }
+    else if (pid == 0)
+    {
+        // 子进程程序代码
+        while (1)
+        {
+            printf("我是子进程");
+            sleep(1);
+        }
+    }
+    else
+    {
+        perror("fork error");
+        return -1;
+    }
+    while (1)
+        ;
+    return 0;
+}
+
+
+```
+
+![image-20261015233627584](c++网络基础.assets/image-20261015233627584.png)
+
+2>	僵尸进程:当前进程已经退出了,但是其父进程没有为其回收资源 
+
+```CPP
+#include <myhead.h>
+using namespace std;
+int main(int argc, const char *argv[])
+{
+    pid_t pid = -1;
+    pid = fork();
+    if (pid > 0)
+    {
+        // 父进程程序代码
+        while (1)
+        {
+            printf("我是子进程");
+            sleep(1);
+        }
+    }
+    else if (pid == 0)
+    {
+        // 子进程程序代码
+        sleep(5);
+        exit(EXIT_SUCCESS); // 父进程退出
+    }
+    else
+    {
+        perror("fork error");
+        return -1;
+    }
+    while (1)
+        ;
+    return 0;
+}
+
+```
+
+![image-20261015233818310](c++网络基础.assets/image-20261015233818310.png)
 
 
 
