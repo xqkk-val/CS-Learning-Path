@@ -6,7 +6,7 @@ aliasesaliases:
 
 ## 一  linux入门
 
-### 1.1>C++环境的搭建
+### 1.1>C++环境的搭建ghghf
 
 #### 1>环境搭建
 #linux #环境 #gcc
