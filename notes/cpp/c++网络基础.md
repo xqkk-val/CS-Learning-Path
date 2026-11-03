@@ -2524,9 +2524,94 @@ p：管道文件
 
 	int pipe(int fildes[2]);
 		功能：创建一个无名管道，并返回该管道的两个文件描述符
-		参数：是一个整型数组，用于返回打开的管道的两端的文件描述符，fildes[o]表示读端fildes[1]表示写端
+		参数：是一个整型数组，用于返回打开的管道的两端的文件描述符，fildes[0]表示读端fildes[1]表示写端
 		返回值:成功返回0,失败返回-1并置位错误码
 ```
+
+```cpp
+#include <myhead.h>
+using namespace std;
+
+int main(int argc, const char *argv[])
+{
+    // 可以在此创建管道文件，并返回该管道文件的两端,那么父子进程都会拥有该管道两端的文件描述符
+    int fildes[2]; // 存放管道文件的两端文件描述符
+
+    if (pipe(fildes) == -1)
+    {
+        perror("pipe error");
+        return -1;
+    }
+    printf("fildes[0]=%d,fildes[1]=%d\n", fildes[0], fildes[1]);
+    pid_t pid = fork();
+    // 也不可以在此创建管道文件，因为如果在此创建，那么父进程中和子进程中会分别创建一个无名管道
+    if (pid > 0)
+    {
+        // 父进程
+        // 关闭读端
+        close(fildes[0]);
+        char wbuf[128] = "xshell";
+        // 如果在此创建管道，那么只能父进程使用，因为子进程中没有管道文件的读端和写端文件描述符
+
+        // 将上述数据发送的子进程
+        write(fildes[1], wbuf, strlen(wbuf));
+        // 关闭写端
+        close(fildes[1]);
+        wait(NULL);
+    }
+    else if (pid == 0)
+    {
+        // 子进程
+        // 关闭写端
+        close(fildes[1]);
+        // 通过读端从管道文件中读取数据
+        char rbuf[128] = "";
+        read(fildes[0], rbuf, sizeof(rbuf));
+        // 关闭读端
+        close(fildes[0]);
+        printf("收到父进程的数据%s\n", rbuf);
+        exit(EXIT_SUCCESS);
+    }
+    else
+    {
+        perror("fork error");
+        return -1;
+    }
+
+    return 0;
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6>	管道通信特点
+
+```
+1.
+```
+
+
+
+
+
+
 
 
 
