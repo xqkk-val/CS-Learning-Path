@@ -2640,7 +2640,7 @@ int main(int argc, const char *argv[])
 ```
 #include <sys/types.h>
 #include <sys/stat.h>
-int mkfifo(const char *pathname, mode_t mode);
+int mkfifo(const char *pathname, mode_t mode);			//0664
 功能：创建一个管道文件，并存在与文件系统中
 参数1：管道文件的名称
 参数2：管道文件的权限，内容详见open函数的mode参数
@@ -2668,6 +2668,94 @@ recv.cpp
 
 
 ![image-20261104201330563](c++网络基础.assets/image-20261104201330563.png)
+
+![image-20261104201448486](c++网络基础.assets/image-20261104201448486.png)
+
+
+
+
+
+#### 3.4 信号
+
+##### 1>信号相关概念
+
+```
+1、信号是软件模拟硬件的中断功能，信号是软件实现的，中断是硬件实现的
+中断：停止当前正在执行的事情，去做另一件事情
+2、信号是linux内核实现的，没有内核就没有信号的概念
+3、用户可以给进程发信号：例如键入ctrl+c
+内核可以向进程发送信号：例如SIGPIPE
+一个进程可以给另一个进程发送信号，需要通过相关函数来完成
+4、信号通信是属于异步通信工作
+同步：表示多个任务有先后顺序的执行,例如去银行办理业务
+异步：表示多个任务没有先后顺序执行,例如你在敲代码，你妈妈在做饭
+```
+
+##### 2>通信原理图
+
+![image-20261104202441236](c++网络基础.assets/image-20261104202441236-17937950823961.png)
+
+
+
+##### 3>信号的种类及功能
+
+```
+1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL       5) SIGTRAP
+ 6) SIGABRT      7) SIGBUS       8) SIGFPE       9) SIGKILL     10) SIGUSR1
+11) SIGSEGV     12) SIGUSR2     13) SIGPIPE     14) SIGALRM     15) SIGTERM
+16) SIGSTKFLT   17) SIGCHLD     18) SIGCONT     19) SIGSTOP     20) SIGTSTP
+21) SIGTTIN     22) SIGTTOU     23) SIGURG      24) SIGXCPU     25) SIGXFSZ
+26) SIGVTALRM   27) SIGPROF     28) SIGWINCH    29) SIGIO       30) SIGPWR
+31) SIGSYS      34) SIGRTMIN    35) SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3
+38) SIGRTMIN+4  39) SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8
+43) SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12 47) SIGRTMIN+13
+48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12
+53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7
+58) SIGRTMAX-6  59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2
+63) SIGRTMAX-1  64) SIGRTMAX
+
+1.一共可以发送62个信号,前32个是稳定信号,后面是不稳定信号
+2.常用的信号
+SIGHUP:	当进程所在的终端被关闭后,终端会给运行在当前终端的每个进程放送该信号,默认结束进程
+SIGINT：中断信号，当用户键入Ctrl+c时发射出来
+SIGQUIT：退出信号，当用户键入ctrl+/是发送，退出进程
+SIGKILL：杀死指定的进程
+SIGSEGV：当指针出现越界访问时，会发射，表示段错误
+SIGPIPE：当管道破裂时会发送该信号
+SIGALRM：当定时器超时后，会发送该信号
+SIGSTOP：暂停进程，当用户键入ctrl+z时发射
+SIGTSTP：也是暂停进程
+SIGTSTP、SIGUSR2：留给用户自定义的信号，没有默认操作
+3、有两个特殊信号：SIGKILL和SIGSTOP，这两个信号既不能被捕获，也不能被忽略
+```
+
+##### 4>对应信号的处理方式有三种：捕获、忽略、默认
+
+##### 5>对信号的处理函数:signal
+
+```
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
