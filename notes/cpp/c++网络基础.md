@@ -2842,7 +2842,7 @@ ipcrm -q/m/s ID：可以删除指定ID的IPC对象
 
 ![image-20261104214859122](c++网络基础.assets/image-20261104214859122.png)
 
-```
+```cpp
 1、创建key值
 	#include <sys/types.h>
 	#include <sys/ipc.h>
@@ -2868,8 +2868,108 @@ ipcrm -q/m/s ID：可以删除指定ID的IPC对象
 			0664：该消息队列的操作权限
 			eg: IPC_CREAT|O664 或者IPC_CREAT|IPC_EXCL|0664
 			返回值：成功返回消息队列的ID号，失败返回-1并置位错误码
-
+3、向消息队列中存放数据
+	#include <sys/types.h>
+	#include <sys/ipc.h>
+	#include<sys/msg.h>
+	
+	int msgsnd(int msqid, const void *msgp,size_t msgsz,int msgflg);
+	功能：向消息队列中存放一个指定格式的消息
+	参数1：打开的消息队列的id号
+	参数2：要发送的消息的起始地址，消息一般定义为一个结构体类型，由用户手动定义
+	struct msgbuf {
+		long mtype;			/* message type, must be > 0 */		消息的类型
+		char mtext[1];		/* message data */		消息正文
+		};
+	参数3：消息正文的大小
+	参数4：是否阻塞的标识
+		0：标识阻塞形式向消息队列中存放消息，如果消息队列满了，就在该函数处阻塞
+		IPC_NOWAIT：标识非阻塞的形式向消息队列中存放消息，如果消息队列满了，直接返回
+	返回值：成功返回0，失败返回-1并置位错误码
+4、从消息队列中取消息
+	功能：从消息队列中取数指定类型的消息放入给定的容器中
+	参数1：打开的消息队列的id号
+	参数2：要发送的消息的起始地址，消息一般定义为一个结构体类型，由用户手动定义
+	struct msgbuf {
+		long mtype;			/* message type, must be > 0 */		消息的类型
+		char mtext[1];		/* message data */		消息正文
+		};
+	参数3：消息正文的大小
+	参数4:要接收的消息类型
+		0：表示每次都取消息队列中的第一个消息，无论类型
+		>0：读取队列中第一个类型为msgtyp的消息
+		<0：读取队列中的一个消息，消息为绝对值小于msgtyp的第一个消息
+		eg:	10-->8-->3-->6-->5-->20-->2
+		-5：会从队列中绝对值小于5的类型的消息中选取第一个消息，就是3
+	参数5:否阻塞的标识
+		0：标识阻塞形式向消息队列中存放消息，如果消息队列满了，就在该函数处阻塞
+		IPC_NOWAIT：标识非阻塞的形式向消息队列中存放消息，如果消息队列满了，直接返回
+	返回值：成功返回实际读取的正文大小，失败返回-1并置位错误码
+5、销毁消息队列
+	#include <sys/types.h>
+	#include <sys/ipc.h>
+	#include <sys/msg.h>
+	
+    int msgctl(int msqid,int cmd, struct msqid_ds *buf);
+    功能：对给定的消息队列执行相关的操作，该操作由cmd参数而定
+	参数1：消息队列的ID号
+	参数2：要执行的操作
+		IPC_RMID：删除一个消息队列，当cmd为该值时，第三个参数可以省略填NULL即可
+		IPC_STAT：表示获取当前消息队列的属性，此时第三个参数就是存放获取的消息队列属性的容器起始地址
+		IPC_SET：设置当前消息队列的属性，此时第三个参数就是要设置消息队列的属性数据的起始地址
+	参数3：消息队列数据容器结构体，如果第二个参数为IPC_RMID，则该参数忽略填NULL即可，如果是IPC_STAT、IPC_SET填如下结
+构体：
+		struct msqid_ds {
+			struct ipc_perm msg_perm;		/* Ownership and permissions */		消息队列的拥有者和权限
+			time_t			msg_stime;		/* Time of last msgsnd(2) */		最后一次发送消息的时间
+			time_t			msg_rtime;		/* Time of last msgrcv(2) */		最后一次接收消息的时间
+			time_t			msg_ctime;		/* Time of last change */		最后一次状态改变的时间
+			unsigned long	__msg_cbytes;		/* Current number of bytesin queue (nonstandard)*/ 已用字节数
+			msgqnum_t		msg_qnum;		/*Currentnumber of messagesin queue*/	消息队列中消息个数
+			msglen_t		msg_qbytes;		/*Maximumnumber of bytes allowed in queue*/	最大消息个数
+			pid_t			msg_lspid;		/* PID of last msgsnd(2) */		最后一次发送消息的进程pid
+			pid_t			msg_lrpid;		/* PID of last msgrcv(2) */		最后一次读取消息的进程pid
+		};
+		该结构体的第一个成员类型如下：
+		STRUCT IPC_PERM {
+			key_t			_key;		/* Key supplied to msgget(2) */ key值
+			uid_t			uid;		/* Effective UID of owner */	当前进程的uid
+			gid_t			gid;		/* Effective GID of owner */	当前进程的组ID
+			uid_t			cuid;		/*EffectiveUID of creator*/		消息队列创建者的用户id
+			gid_t			cgid;		/* EffectiveGID of creator*/	消息队列创建者的组id
+			unsigned short mode;		/* Permissions */				消息队列的权限
+			unsigned short _seq;		/* Sequence number */			队列号
+			};
+			返回值：成功返回0，失败返回-1并置位错误码
 ```
+
+28未看
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### 3.7	共享内存
+
+
 
 
 
