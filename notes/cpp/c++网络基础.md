@@ -3506,7 +3506,7 @@ struct sockaddr {
 
 1>通信原理
 
-![image-20260604213656728](image-20260604213656728.png)
+![image-20261105234821439](c++网络基础.assets/image-20261105234821439.png)
 
 2>bind函数
 
@@ -3515,20 +3515,20 @@ struct sockaddr {
 man 2 bind
 
 ```cpp 
- #include <sys/socket.h>
- int bind(int sockfd, const struct sockaddr *addr,socklen_t addrlen);
-功能:为套接字分配名称，给套接字绑定ip地址和端口号
-参数1：要被绑定的套接字文件描述符
-参数2：通用地址信息结构体，对于不同的通信域面言，使用的实际结构体是不同的,该结构体的目的是为了强制类型转换，防止警告
-    通信域为：AF_INET而言
-    struct sockaddr_in
-sa_family_t sin_family;	/*地址族：AF_INET */
-in_port_t sin_port;/端口号的网络字节序*/
-struct in_addr sin_addr；/*网络地址 */
-}:
+	#include <sys/socket.h>
+	int bind(int sockfd, const struct sockaddr *addr,socklen_t addrlen);
+	功能:为套接字分配名称，给套接字绑定ip地址和端口号
+	参数1：要被绑定的套接字文件描述符
+	参数2：通用地址信息结构体，对于不同的通信域面言，使用的实际结构体是不同的,该结构体的目的是为了强制类型转换，防止警告
+    	通信域为：AF_INET而言,ipv4的通信方式
+    	struct sockaddr_in{
+			sa_family_t sin_family;		/*地址族：AF_INET */
+			in_port_t 	sin_port;			/*端口号的网络字节序*/
+			struct in_addr sin_addr；	/*网络地址 */
+		};
 
 /* Internet address.*/
-struct in_addr {
+struct sin_addr {
 uint32_t s_addr; /*ip地址的网络字节序*/
 };
 通信域为：AF_UNIX面言，本地通信
@@ -3555,7 +3555,7 @@ int listen(int sockfd,int backlog);
 返回值：成功返回0，失败返回-1并置位错误码
 ```
 
-4>	accept函数
+##### 4>	accept函数
 
 #accept
 
@@ -3571,8 +3571,48 @@ int accept(int sockfd, struct sockaddr *addr，socklen_t *addrlen)；
 参数1：服务器套接字文件描述符
 参数2：通用地址信息结构体，用于接受已连接的客户端套接字地址信息
 参数3：接收参数2的大小
-返回值：成功发那会一个新的用于通信的套接字文件描述符，失致返回-1并置位错误码
+返回值：成功返回一个新的用于通信的套接字文件描述符，失致返回-1并置位错误码
 ```
+
+
+
+
+
+##### 5
+
+![image-20261105235900490](c++网络基础.assets/image-20261105235900490.png)
+
+![image-20261106000044960](c++网络基础.assets/image-20261106000044960.png)
+
+![image-20261106000518944](c++网络基础.assets/image-20261106000518944.png)
+
+![image-20261106000601638](c++网络基础.assets/image-20261106000601638.png)
+
+![image-20261106000752181](c++网络基础.assets/image-20261106000752181.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
