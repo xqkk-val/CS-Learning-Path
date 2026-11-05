@@ -3607,3 +3607,30 @@ int accept(int sockfd, struct sockaddr *addr，socklen_t *addrlen)；
 ## 六 	制作HTTP服务器
 
 ## 七	项目篇
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### wangluolts$
+
+
+
+![image-20261105224229622](c++网络基础.assets/image-20261105224229622.png)
+
