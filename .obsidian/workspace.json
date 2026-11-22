@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/cpp/c++网络基础.md",
+                "file": "notes/QT/ex01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "c++网络基础"
+              "title": "ex01"
             }
           }
         ]
@@ -210,8 +210,11 @@
       "zk-prefixer:创建时间戳笔记": false
     }
   },
-  "active": "da36b4f51f6fdbf0",
+  "active": "3cf07c153f5d6988",
   "lastOpenFiles": [
+    "notes/cpp/c++网络基础.md",
+    "notes/QT/ex01.md",
+    "notes/QT",
     "notes/cpp/c++网络基础.assets/image-20261106000752181.png",
     "notes/cpp/c++网络基础.assets/image-20261106000601638.png",
     "notes/cpp/c++网络基础.assets/image-20261106000518944.png",
@@ -222,11 +225,9 @@
     "notes/cpp/c++网络基础.assets/image-20261105224229622.png",
     "notes/cpp/c++网络基础.assets/image-20261104214859122.png",
     "notes/cpp/c++网络基础.assets/image-20261104214150985.png",
-    "notes/cpp/c++网络基础.assets/image-20261104213700543.png",
     "操作系统/未命名.canvas",
     "system/日记/2026-09-08.md",
     "未命名.canvas",
-    "notes/cpp/c++网络基础.md",
     "notes/CMake/CMake实战/CMake实战.md",
     "notes/CMake/CMake.md",
     "notes/未命名.canvas",
@@ -259,7 +260,6 @@
     "system/assets/cpp.assets",
     "notes/RocketMQ",
     "notes/redis",
-    "notes/cpp/c++ primer plus/code",
-    "notes/cpp/c++ primer plus"
+    "notes/cpp/c++ primer plus/code"
   ]
 }
